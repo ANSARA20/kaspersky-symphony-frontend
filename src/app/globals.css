@@ -23,7 +23,7 @@
       0 0 50px 10px hsla(var(--color-primary), 0.7);
   }
   .inner-shadow {
-    box-shadow: inset 0px 4px 22px 8px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0px 4px 22px 8px hsla(var(--color-foreground), 0.08);
   }
 }
 

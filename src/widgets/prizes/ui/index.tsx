@@ -17,7 +17,7 @@ export const PrizesSection = () => {
 
   return (
     <View centered vertical as='section' className='relative mt-40 pb-20'>
-      <Text as={'h1'} className='text-center text-[24px] md:text-[32px] lg:text-[40px]' weight={6}>
+      <Text as='h1' className='text-center text-[24px] md:text-[32px] lg:text-[40px]' weight={6}>
         Призы от <span className='text-gradient-base'>Kaspersky</span>
       </Text>
       <PrizesTypes
