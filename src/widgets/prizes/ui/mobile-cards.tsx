@@ -16,7 +16,7 @@ export const MobileCards = ({ tabType }: Props) => {
   const cards = tabContent.map((prize) => <PrizeCard key={prize.name} {...prize} />);
 
   return (
-    <View centered className='-mb-8 w-full'>
+    <View className='-mb-8 w-dvw'>
       <Carousel hideControls isAutoplay options={OPTIONS} slides={cards} />
     </View>
   );
