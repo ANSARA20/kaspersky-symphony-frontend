@@ -1,5 +1,10 @@
-import { View } from '@/shared/ui/view';
+import { useMediaQuery } from 'react-responsive';
+
+import { CallToActionDesktop } from './desktop';
+import { CallToActionMobile } from './mobile';
 
 export const CallToActionSection = () => {
-  return <View as='section'>call to action section!!!</View>;
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+
+  return isDesktop ? <CallToActionDesktop /> : <CallToActionMobile />;
 };
