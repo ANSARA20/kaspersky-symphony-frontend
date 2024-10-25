@@ -22,6 +22,9 @@
       0 5px 0 hsla(var(--color-primary), 0.4),
       0 0 50px 10px hsla(var(--color-primary), 0.7);
   }
+  .inner-shadow {
+    box-shadow: inset 0px 4px 22px 8px hsla(var(--color-foreground), 0.08);
+  }
 }
 
 html {
