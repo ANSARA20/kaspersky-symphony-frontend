@@ -22,18 +22,6 @@
       0 5px 0 hsla(var(--color-primary), 0.4),
       0 0 50px 10px hsla(var(--color-primary), 0.7);
   }
-  .border-gradient-primary {
-    @apply bg-gradient-to-r from-transparent via-primary-700/30 to-transparent;
-  }
-  .border-gradient-secondary {
-    @apply bg-gradient-to-r from-transparent via-secondary-700/30 to-transparent;
-  }
-  .border-gradient-tretiary {
-    @apply bg-gradient-to-r from-transparent via-tretiary-700/30 to-transparent;
-  }
-  .border-gradient-default {
-    @apply bg-gradient-to-r from-transparent via-default-700/30 to-transparent;
-  }
   .inner-shadow {
     box-shadow: inset 0px 4px 22px 8px rgba(255, 255, 255, 0.08);
   }
