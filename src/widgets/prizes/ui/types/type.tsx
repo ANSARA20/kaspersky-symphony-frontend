@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const PrizesType = ({ hoveredPrize, type, isDesktop, tabType, setTabType }: Props) => {
-  const isMobile = !useMediaQuery({ query: '(min-width: 600px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   const animationProps = {
     initial: { opacity: 0, filter: 'blur(12px)' },

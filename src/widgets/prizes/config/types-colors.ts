@@ -10,20 +10,20 @@ interface ITypeProperties {
 }
 
 export const TypesColors: Record<EPrizeTypes, ITypeProperties> = {
-  'Symphony Security': {
-    gradient: 'border-gradient-primary',
+  [EPrizeTypes.SYMPHONY_SECURITY]: {
+    gradient: 'bg-gradient-to-r from-transparent via-primary-700/30 to-transparent;',
     bgBlur: SecurityBlur,
   },
-  'Symphony MDR': {
-    gradient: 'border-gradient-tritiary',
+  [EPrizeTypes.SYMPHONY_MDR]: {
+    gradient: 'bg-gradient-to-r from-transparent via-tretiary-700/30 to-transparent',
     bgBlur: MDRBlur,
   },
-  'Symphony EDR': {
-    gradient: 'border-gradient-secondary',
+  [EPrizeTypes.SYMPHONY_EDR]: {
+    gradient: 'bg-gradient-to-r from-transparent via-secondary-700/30 to-transparent',
     bgBlur: EDRBlur,
   },
-  'Symphony XDR': {
-    gradient: 'border-gradient-default',
+  [EPrizeTypes.SYMPHONY_XDR]: {
+    gradient: 'bg-gradient-to-r from-transparent via-default-700/30 to-transparent',
     bgBlur: XDRBlur,
   },
 };

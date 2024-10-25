@@ -16,7 +16,7 @@ export const BottomBlur = () => {
   return (
     <div className='pointer-events-none absolute bottom-0 flex h-1/2 w-dvw items-center justify-center overflow-hidden'>
       <img alt='blur' className={blurClass} src={Blur} />
-      <div className='border-gradient-primary absolute bottom-0 h-[1px] w-2/3 opacity-50' />
+      <div className='to-transparent; absolute bottom-0 h-[1px] w-2/3 bg-gradient-to-r from-transparent via-primary-700/20 opacity-50' />
     </div>
   );
 };
