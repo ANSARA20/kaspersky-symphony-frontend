@@ -8,6 +8,7 @@ import puppy from '@/shared/assets/images/puppies/puppy_6.png';
 import { CurvedLine } from '@/shared/assets/icons/curved-line';
 
 export const HeroDescription = () => {
+  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
   const isDesktop = useMediaQuery({ query: '(min-width: 1260px)' });
   const isMobile = useMediaQuery({ query: '(min-width: 560px)' });
 

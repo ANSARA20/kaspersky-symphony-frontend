@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useProgressStep } from '../model/use-progress-step';
+import { useProgressStep } from '../lib/use-progress-step';
 import { useQuiz } from '../model/use-quiz';
 import { scrollRight } from '../lib/slide';
 
@@ -20,7 +20,10 @@ export const QuizProgressBar = () => {
   }, [progressStep]);
 
   return (
-    <View ref={containerRef} className='w-[calc(100%+2rem)] overflow-x-scroll px-4 scrollbar-hide'>
+    <View
+      ref={containerRef}
+      className='w-[calc(100%+2rem)] flex-shrink-0 overflow-x-scroll px-4 scrollbar-hide'
+    >
       <View
         className='relative box-content h-12 min-w-[700px] rounded-xl border border-foreground'
         items='center'
@@ -28,10 +31,10 @@ export const QuizProgressBar = () => {
       >
         <MView
           ref={barRef}
-          layout
           animate={{ width: progressStep }}
           className='gradient-base absolute left-1 top-1 z-0 h-10 max-w-[calc(100%-0.5rem)] rounded-lg'
           initial={{ width: 0 }}
+          layout='size'
           transition={{ type: 'spring', duration: 1 }}
           width='fit'
         />

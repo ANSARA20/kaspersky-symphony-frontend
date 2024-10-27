@@ -16,6 +16,7 @@
   "description": "",
   "dependencies": {
     "@number-flow/react": "^0.2.5",
+    "@radix-ui/react-visually-hidden": "^1.1.0",
     "@react-input/mask": "^1.2.10",
     "@react-types/shared": "^3.25.0",
     "color2k": "^2.0.3",

@@ -1,24 +1,43 @@
 /* eslint-disable @conarti/feature-sliced/absolute-relative */
 
-import { PropsWithChildren } from 'react';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
-import { cn } from '@/shared/lib/utils/ui';
+import { useRadio, UseRadioProps } from './use-radio';
 
-export type RadioButtonProps = PropsWithChildren<
-  React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
-    classNames?: { wrapper?: string; input?: string; label?: string };
-  }
->;
+import { forwardRef } from '@/shared/lib/utils/ui';
 
-export const RadioButton = (props: RadioButtonProps) => {
-  const { children, id, classNames, ...restProps } = props;
+export interface RadioProps extends UseRadioProps {}
+
+export const RadioButton = forwardRef<'input', RadioProps>((props, ref) => {
+  const {
+    Component,
+    domRef,
+    children,
+    description,
+    getWrapperProps,
+    getInputProps,
+    getControlWrapperProps,
+    getControlProps,
+    getLabelProps,
+    getLabelWrapperProps,
+    getDescriptionProps,
+  } = useRadio({
+    ...props,
+    ref,
+  });
 
   return (
-    <div className={cn('flex gap-4', classNames?.wrapper)}>
-      <input {...restProps} className={cn(classNames?.input)} id={id} type='radio' />
-      <label className={cn(classNames?.label)} htmlFor={id}>
-        {children}
-      </label>
-    </div>
+    <Component {...getWrapperProps()} ref={domRef}>
+      <VisuallyHidden.Root>
+        <input {...getInputProps()} />
+      </VisuallyHidden.Root>
+      <span {...getControlWrapperProps()}>
+        <span {...getControlProps()} />
+      </span>
+      <div {...getLabelWrapperProps()}>
+        {children && <span {...getLabelProps()}>{children}</span>}
+        {description && <span {...getDescriptionProps()}>{description}</span>}
+      </div>
+    </Component>
   );
-};
+});

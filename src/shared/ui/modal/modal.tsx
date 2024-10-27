@@ -1,3 +1,4 @@
+/* eslint-disable @conarti/feature-sliced/absolute-relative */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
@@ -9,6 +10,8 @@ import { MView } from '../motion-view';
 import { useModal } from './use-modal';
 import { ModalContentVariants } from './animation-variants';
 
+import { cn } from '@/shared/lib/utils/ui';
+
 export const Modal = () => {
   const { modal, closeModal, options } = useModal();
   const { save, scrollable, containerProps } = options;
@@ -18,22 +21,27 @@ export const Modal = () => {
       {modal ? (
         <RemoveScroll className='fixed inset-0 z-50'>
           <MView
-            centered
             vertical
             animate='end'
-            className='pointer-events-none relative z-20 px-4'
             exit='start'
             height='full'
             initial='start'
             style={{ overflowY: scrollable ? 'scroll' : 'hidden' }}
             variants={ModalContentVariants}
             {...containerProps}
+            className={cn(
+              'pointer-events-none relative z-20 px-4',
+
+              containerProps?.className,
+            )}
           >
             {modal}
           </MView>
           <m.button
             animate='end'
-            className='fixed inset-0 z-10 bg-black/60 backdrop-blur-xl'
+            className={cn('fixed inset-0 z-10 bg-black/60 backdrop-blur-xl', {
+              'cursor-default': save,
+            })}
             exit='start'
             initial='start'
             variants={ModalContentVariants}
