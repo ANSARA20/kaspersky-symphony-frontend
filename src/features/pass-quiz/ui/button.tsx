@@ -18,7 +18,11 @@ export const PassQuizButton = ({ className }: Props) => {
   const { setModal } = useModal();
 
   const handleOpenQuiz = () => {
-    setModal(<Quiz />, { save: false, scrollable: true });
+    setModal(<Quiz />, {
+      save: true,
+      scrollable: true,
+      containerProps: { className: 'block pb-4 lg:pb-0 lg:flex lg:justify-center lg:items-center' },
+    });
   };
 
   return (

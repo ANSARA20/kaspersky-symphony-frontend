@@ -1,5 +1,6 @@
 /* eslint-disable @conarti/feature-sliced/absolute-relative */
 import { Selection as AriaSharedSelection } from '@react-types/shared';
+import { ClassValue } from 'tailwind-variants';
 
 export type As<Props = any> = React.ElementType<Props>;
 export type DOMElements = keyof JSX.IntrinsicElements;
@@ -82,4 +83,11 @@ export type PropGetter<P = Record<string, unknown>, R = DOMAttributes> = (
 export type SharedSelection = AriaSharedSelection & {
   anchorKey?: string;
   currentKey?: string;
+};
+
+/**
+ * This Typescript utility transform a list of slots into a list of {slot: classes}
+ */
+export type SlotsToClasses<S extends string> = {
+  [key in S]?: ClassValue;
 };

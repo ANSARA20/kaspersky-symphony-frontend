@@ -16,8 +16,10 @@ interface Props {
 }
 
 export const PrizesType = ({ hoveredPrize, type, isDesktop, tabType, setTabType }: Props) => {
+  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
+  // ! Вынести в config
   const animationProps: MotionProps = {
     initial: { opacity: 0, filter: 'blur(12px)' },
     animate: { opacity: 1, filter: 'blur(0px)' },
@@ -31,10 +33,12 @@ export const PrizesType = ({ hoveredPrize, type, isDesktop, tabType, setTabType 
     }
   };
 
+  // ! все таки когда классы не изменяемые, лучше использовать cslx
   const wrapperClass = cn('relative h-full px-4 py-4', {
     'px-2': isMobile,
   });
 
+  // ! все таки когда классы не изменяемые, лучше использовать cslx
   const typeClass = cn(
     'inner-shadow h-full w-full rounded-xl bg-white bg-opacity-10 px-12 py-4 text-lg leading-5',
     {

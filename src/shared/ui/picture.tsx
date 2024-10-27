@@ -1,3 +1,4 @@
+// ! Убери лишние пропсы
 type Props = {
   src: string;
   srcSet?: string;

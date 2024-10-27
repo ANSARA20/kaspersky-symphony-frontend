@@ -11,8 +11,11 @@ interface Props {
 }
 
 export const MobileCards = ({ tabType }: Props) => {
+  // ! Вынести в конфиг
   const OPTIONS: EmblaOptionsType = { loop: true };
+  // ! Мемоизировать
   const tabContent = PrizesList.filter((prize) => prize.type === tabType);
+  // ! Мемоизировать
   const cards = tabContent.map((prize) => <PrizeCard key={prize.name} {...prize} />);
 
   return (
