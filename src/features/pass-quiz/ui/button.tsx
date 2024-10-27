@@ -8,8 +8,13 @@ import { Button } from '@/shared/ui/button';
 import { Picture } from '@/shared/ui/picture';
 import { useModal } from '@/shared/ui/modal';
 import { Quiz } from '@/entities/quiz';
+import { cn } from '@/shared/lib/utils/ui';
 
-export const PassQuizButton = () => {
+interface Props {
+  className?: string;
+}
+
+export const PassQuizButton = ({ className }: Props) => {
   const { setModal } = useModal();
 
   const handleOpenQuiz = () => {
@@ -17,7 +22,7 @@ export const PassQuizButton = () => {
   };
 
   return (
-    <div className='relative'>
+    <div className={cn('relative', className)}>
       <Button
         className='shadow-blum gap-4 rounded-full px-16 py-8 active:translate-y-1 xl:px-32 xl:py-12'
         size='lg'
