@@ -7,14 +7,18 @@ import { PrizesSection } from '@/widgets/prizes';
 
 export const HomePage = () => {
   return (
-    <View vertical className='overflow-x-hidden'>
+    <View vertical className='gap-0 overflow-x-hidden'>
       <View vertical className='max-w-layout container mx-auto px-4'>
         <Header />
         <HeroSection />
       </View>
       <View vertical className='container mx-auto px-4'>
         <PrizesSection />
+      </View>
+      <View>
         <CallToActionSection />
+      </View>
+      <View vertical className='max-w-layout container mx-auto px-4'>
         <Footer />
       </View>
     </View>
