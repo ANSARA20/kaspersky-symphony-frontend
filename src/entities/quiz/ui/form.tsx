@@ -47,6 +47,8 @@ export const QuizForm = () => {
   const [value, setValue] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
 
+  const isLastQuestion = useMemo(() => currentQuestionNumber === 7, [currentQuestionNumber]);
+
   const handleSubmit: React.FormEventHandler<HTMLDivElement> = (e) => {
     e.preventDefault();
 
@@ -60,7 +62,7 @@ export const QuizForm = () => {
 
       setCurrentQuestionId(undefined);
 
-      if (currentQuestionNumber === 7) {
+      if (isLastQuestion) {
         closeModal();
       } else {
         nextQuestion();
@@ -141,7 +143,7 @@ export const QuizForm = () => {
               className='shadow-blum h-16 w-full rounded-full active:translate-y-2 lg:w-72'
               type='submit'
             >
-              Следующий вопрос
+              {isLastQuestion ? 'Показать результаты' : 'Следующий вопрос'}
               <ArrowRight />
             </Button>
           </m.div>
