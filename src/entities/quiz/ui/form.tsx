@@ -15,9 +15,10 @@ import { View } from '@/shared/ui/view';
 import { Button } from '@/shared/ui/button';
 import { useModal } from '@/shared/ui/modal';
 import { ArrowRight } from '@/shared/assets/icons/arrow-right';
+import { ResultsModal } from '@/entities/results';
 
 export const QuizForm = () => {
-  const { closeModal } = useModal();
+  const { setModal } = useModal();
   const {
     incCorrectAnswers,
     nextQuestion,
@@ -25,6 +26,7 @@ export const QuizForm = () => {
     currentQuestionId,
     correctAnswersCount,
     answeredQuestionsIds,
+    setIsQuizEnded,
     setCurrentQuestionId,
     pushToAnsweredQuestionsIds,
   } = useQuiz();
@@ -63,7 +65,12 @@ export const QuizForm = () => {
       setCurrentQuestionId(undefined);
 
       if (isLastQuestion) {
-        closeModal();
+        setIsQuizEnded(true);
+        setModal(<ResultsModal />, {
+          save: true,
+          scrollable: true,
+          containerProps: { justify: 'start', items: 'center' },
+        });
       } else {
         nextQuestion();
         setIsChecked(false);
