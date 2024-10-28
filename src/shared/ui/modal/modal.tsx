@@ -19,7 +19,7 @@ export const Modal = () => {
   return (
     <AnimatePresence>
       {modal ? (
-        <RemoveScroll className='fixed inset-0 z-50'>
+        <RemoveScroll removeScrollBar className='fixed inset-0 z-50'>
           <MView
             vertical
             animate='end'
@@ -30,7 +30,7 @@ export const Modal = () => {
             variants={ModalContentVariants}
             {...containerProps}
             className={cn(
-              'pointer-events-none relative z-20 px-4',
+              'relative z-20 px-4',
 
               containerProps?.className,
             )}
