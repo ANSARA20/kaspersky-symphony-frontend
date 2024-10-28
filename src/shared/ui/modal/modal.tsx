@@ -11,6 +11,7 @@ import { useModal } from './use-modal';
 import { ModalContentVariants } from './animation-variants';
 
 import { cn } from '@/shared/lib/utils/ui';
+import { CloseIcon } from '@/shared/assets/icons/close-icon';
 
 export const Modal = () => {
   const { modal, closeModal, options } = useModal();
@@ -55,7 +56,7 @@ export const Modal = () => {
             variants={ModalContentVariants}
             onClick={closeModal}
           >
-            Close
+            <CloseIcon size={24} />
           </m.button>
         </RemoveScroll>
       ) : null}
