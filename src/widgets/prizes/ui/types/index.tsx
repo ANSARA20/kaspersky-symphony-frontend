@@ -22,7 +22,7 @@ export const PrizesTypes = (props: Props) => {
     return types.map((type) => (
       <PrizesType key={type} {...props} isDesktop={isDesktop} type={type} />
     ));
-  }, [isDesktop]);
+  }, [isDesktop, props.tabType]);
 
   return (
     <>
