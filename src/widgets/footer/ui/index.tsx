@@ -19,12 +19,14 @@ export const Footer = () => {
 
   return (
     <View as='footer' className='border-t border-foreground/30'>
-      <View vertical className='max-w-layout container mx-auto px-4 pb-6 pt-10'>
+      <View vertical className='max-w-layout container mx-auto px-8 pb-6 pt-10 sm:px-4'>
         <FooterCols />
-        <Text opacity={5}>© 2024 Kaspersky</Text>
-        <View items='center' justify='between'>
+        <Text className='hidden lg:block' opacity={5}>
+          © 2024 Kaspersky
+        </Text>
+        <View className='flex-col items-start lg:flex-row lg:items-center' justify='between'>
           <View vertical>
-            <View gap='lg' items='center'>
+            <View className='flex-col items-start gap-sm text-sm sm:text-base lg:flex-row lg:items-center xl:gap-lg'>
               <button
                 className='flex items-center gap-2'
                 onClick={() => {
@@ -43,16 +45,17 @@ export const Footer = () => {
                 Юридическая информация
               </View>
             </View>
-            <View>
-              <View gap='lg' items='center'>
-                {FooterDocuments.map(({ title, href }, index) => (
-                  <Text key={index} as='a' className='text-[12px]' href={href}>
-                    {title}
-                  </Text>
-                ))}
-              </View>
+            <View className='flex-col items-start gap-sm lg:flex-row lg:items-center xl:gap-lg'>
+              {FooterDocuments.map(({ title, href }, index) => (
+                <Text key={index} as='a' className='text-[12px]' href={href}>
+                  {title}
+                </Text>
+              ))}
             </View>
           </View>
+          <Text className='block lg:hidden' size='sm'>
+            © 2024 Kaspersky
+          </Text>
           <View gap='lg' width='fit'>
             {FooterSocialNetworks.map(({ icon, href }, index) => (
               <View key={index} as='a' href={href} width='fit'>
