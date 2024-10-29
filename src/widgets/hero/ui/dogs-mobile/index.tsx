@@ -2,7 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useMemo } from 'react';
 
 import { MobileDogsOptions } from '../../config/mobile-dogs-options';
-import { HeroEmbalaOptions } from '../../config/emala-options';
+import { HeroEmblaOptions } from '../../config/embla-options';
 
 import { HeroDogMobile } from './dog-mobile';
 
@@ -38,7 +38,7 @@ export const HeroDogsMobile = () => {
 
   return (
     <View className='w-dvw'>
-      <Carousel options={HeroEmbalaOptions} slides={slides} />
+      <Carousel options={HeroEmblaOptions} slides={slides} />
     </View>
   );
 };

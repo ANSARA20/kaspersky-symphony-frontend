@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { PrizesList } from '../config/prizes-list';
-import { PrizesEmabalaOptions } from '../config/embala-options';
+import { PrizesEmablaOptions } from '../config/embla-options';
 
 import { View } from '@/shared/ui/view';
 import { EPrizeTypes, PrizeCard } from '@/entities/prize';
@@ -20,7 +20,7 @@ export const MobileCards = ({ tabType }: Props) => {
 
   return (
     <View className='-mb-8 w-dvw'>
-      <Carousel hideControls isAutoplay options={PrizesEmabalaOptions} slides={cards} />
+      <Carousel hideControls isAutoplay options={PrizesEmablaOptions} slides={cards} />
     </View>
   );
 };

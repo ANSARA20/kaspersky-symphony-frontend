@@ -1,7 +1,17 @@
-export const FooterColsConst = [
+interface IFooterColRow {
+  title: string;
+  href: string;
+}
+
+interface IFooterCol {
+  title: string;
+  rows: IFooterColRow[];
+}
+
+export const FooterColsConst: IFooterCol[] = [
   {
     title: 'Решения для дома',
-    cols: [
+    rows: [
       {
         title: 'Kaspersky Standard',
         href: '',
@@ -34,7 +44,7 @@ export const FooterColsConst = [
   },
   {
     title: 'Решения для дома',
-    cols: [
+    rows: [
       {
         title: 'Антивирус для Android',
         href: '',
@@ -59,7 +69,7 @@ export const FooterColsConst = [
   },
   {
     title: 'Решения для малого и среднего бизнеса',
-    cols: [
+    rows: [
       {
         title: 'Kaspersky Small Office Security',
         href: '',
@@ -76,7 +86,7 @@ export const FooterColsConst = [
   },
   {
     title: 'Корпоративные решения',
-    cols: [
+    rows: [
       {
         title: 'Сервисы кибербезопасности',
         href: '',

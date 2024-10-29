@@ -15,12 +15,8 @@ export const HomePage = () => {
       <View vertical className='container mx-auto px-4'>
         <PrizesSection />
       </View>
-      <View>
-        <CallToActionSection />
-      </View>
-      <View>
-        <Footer />
-      </View>
+      <CallToActionSection />
+      <Footer />
     </View>
   );
 };

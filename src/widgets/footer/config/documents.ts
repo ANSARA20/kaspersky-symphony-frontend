@@ -1,4 +1,9 @@
-export const FooterDocuments = [
+interface IFooterDocuments {
+  title: string;
+  href: string;
+}
+
+export const FooterDocuments: IFooterDocuments[] = [
   {
     title: 'Политика конфиденциальности',
     href: '',

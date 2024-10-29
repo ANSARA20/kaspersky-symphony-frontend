@@ -5,7 +5,12 @@ import { VK } from '@/shared/assets/icons/vk';
 import { X } from '@/shared/assets/icons/x';
 import { YouTube } from '@/shared/assets/icons/youtube';
 
-export const FooterSocialNetworks = [
+interface IFooterSocialNetworks {
+  icon: React.ReactNode;
+  href: string;
+}
+
+export const FooterSocialNetworks: IFooterSocialNetworks[] = [
   {
     icon: <TG />,
     href: '',
