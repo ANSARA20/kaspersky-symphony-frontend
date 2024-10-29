@@ -9,12 +9,13 @@ import { FileQuestion } from '@/shared/assets/icons/file-question';
 import { RulesIcon } from '@/shared/assets/icons/rules-icon';
 import { FileCheck } from '@/shared/assets/icons/file-check';
 import { useModal } from '@/shared/ui/modal';
+import { FAQ } from '@/entities/faq';
 
 export const Footer = () => {
   const { setModal } = useModal();
 
   const handleOpenFAQ = () => {
-    setModal(<></>);
+    setModal(<FAQ />);
   };
 
   return (
