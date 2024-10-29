@@ -13,6 +13,7 @@ interface Props {
 }
 
 export const HeroDogMobile = ({ image, title, textClassPosition, blockClassPosition }: Props) => {
+  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   return (

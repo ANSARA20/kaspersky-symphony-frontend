@@ -1,4 +1,4 @@
-import { ISVGProps } from '@/shared/model/types/svg-props.type';
+import { ISVGProps } from '../../model/types/svg-props.type';
 
 export const Circles = ({ size = 851, className }: ISVGProps) => {
   return (

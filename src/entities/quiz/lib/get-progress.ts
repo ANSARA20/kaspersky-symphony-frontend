@@ -1,25 +1,17 @@
 import { ESymphonyLevels } from '@/shared/model/types';
 
-export const getQuizProgress = (correctAnswers: number) => {
-  switch (correctAnswers) {
-    case 0:
-    case 1:
-      return '25%';
-    case 2:
-    case 3:
-      return '50%';
-    case 4:
-    case 5:
-      return '75%';
-    case 6:
-    case 7:
-    default:
-      return '100%';
-  }
+type Progresses = '25%' | '50%' | '75%' | '100%';
+
+export const QuizPercentProgresses: Record<ESymphonyLevels, Progresses> = {
+  [ESymphonyLevels.SECURITY]: '25%',
+  [ESymphonyLevels.MDR]: '50%',
+  [ESymphonyLevels.EDR]: '75%',
+  [ESymphonyLevels.XDR]: '100%',
 };
 
 export const getStatusByProgress = (currentQuestion: number) => {
   switch (currentQuestion) {
+    case 0:
     case 1:
       return ESymphonyLevels.SECURITY;
     case 2:

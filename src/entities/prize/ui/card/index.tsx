@@ -17,6 +17,7 @@ export const PrizeCard = ({
   bgClass,
   imgClass,
 }: ICardPrize) => {
+  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
   const isMobile = !useMediaQuery({ query: '(min-width: 600px)' });
   const cardClass = clsx('relative h-[375px] max-w-[330px] rounded-3xl p-4', {
     'h-[340px] max-w-[280px]': isMobile,

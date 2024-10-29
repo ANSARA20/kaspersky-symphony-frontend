@@ -7,8 +7,9 @@ import { ArrowRight } from '@/shared/assets/icons/arrow-right';
 import { Button } from '@/shared/ui/button';
 import { Picture } from '@/shared/ui/picture';
 import { useModal } from '@/shared/ui/modal';
-import { Quiz } from '@/entities/quiz';
+import { Quiz, useQuiz } from '@/entities/quiz';
 import { cn } from '@/shared/lib/utils/ui';
+import { ResultsModal } from '@/entities/results';
 
 interface Props {
   className?: string;
@@ -16,9 +17,24 @@ interface Props {
 
 export const PassQuizButton = ({ className }: Props) => {
   const { setModal } = useModal();
+  const { isQuizEnded } = useQuiz();
 
   const handleOpenQuiz = () => {
-    setModal(<Quiz />, { save: false, scrollable: true });
+    if (isQuizEnded) {
+      setModal(<ResultsModal />, {
+        save: true,
+        scrollable: true,
+        containerProps: { justify: 'start', items: 'center' },
+      });
+
+      return;
+    }
+
+    setModal(<Quiz />, {
+      save: true,
+      scrollable: true,
+      containerProps: { className: 'block pb-4 lg:pb-0 lg:flex lg:justify-center lg:items-center' },
+    });
   };
 
   return (
