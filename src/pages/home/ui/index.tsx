@@ -18,7 +18,7 @@ export const HomePage = () => {
       <View>
         <CallToActionSection />
       </View>
-      <View vertical className='max-w-layout container mx-auto px-4'>
+      <View>
         <Footer />
       </View>
     </View>
