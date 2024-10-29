@@ -1,4 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
 import { useMemo } from 'react';
 
 import { PrizesType } from './type';
@@ -15,24 +14,17 @@ interface Props {
 
 export const PrizesTypes = (props: Props) => {
   const types = Object.values(EPrizeTypes);
-  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   const typesElements = useMemo(() => {
-    return types.map((type) => (
-      <PrizesType key={type} {...props} isDesktop={isDesktop} type={type} />
-    ));
-  }, [isDesktop, props.tabType]);
+    return types.map((type) => <PrizesType key={type} {...props} type={type} />);
+  }, [props.tabType, props.hoveredPrize]);
 
   return (
     <>
-      {isDesktop ? (
-        <View centered className='mb-8 gap-0'>
-          {typesElements}
-        </View>
-      ) : (
-        <div className='grid grid-cols-2'>{typesElements}</div>
-      )}
+      <View centered className='mb-8 hidden gap-0 xl:flex'>
+        {typesElements}
+      </View>
+      <div className='grid grid-cols-2 xl:hidden'>{typesElements}</div>
     </>
   );
 };

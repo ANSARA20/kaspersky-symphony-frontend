@@ -1,4 +1,4 @@
-export const FooterCols = [
+export const FooterColsConst = [
   {
     title: 'Решения для дома',
     cols: [

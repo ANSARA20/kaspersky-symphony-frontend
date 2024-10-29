@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
 
 import Logo from '@/shared/assets/icons/logo';
-import RulesIcon from '@/shared/assets/icons/rules-icon';
+import { RulesIcon } from '@/shared/assets/icons/rules-icon';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 
