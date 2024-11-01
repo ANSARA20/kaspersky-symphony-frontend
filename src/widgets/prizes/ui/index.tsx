@@ -8,11 +8,11 @@ import { MobileCards } from './mobile-cards';
 
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
-import { EPrizeTypes } from '@/entities/prize';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 export const PrizesSection = () => {
-  const [hoveredPrize, setHoveredPrize] = useState<null | EPrizeTypes>(null);
-  const [tapType, setTabType] = useState<EPrizeTypes>(EPrizeTypes.SYMPHONY_SECURITY);
+  const [hoveredPrize, setHoveredPrize] = useState<null | ESymphonyLevels>(null);
+  const [tapType, setTabType] = useState<ESymphonyLevels>(ESymphonyLevels.SECURITY);
   const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   return (

@@ -3,6 +3,7 @@ import { CallToActionSection } from '@/widgets/call-to-action';
 import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
+import { Leaders } from '@/widgets/leaders';
 import { PrizesSection } from '@/widgets/prizes';
 
 export const HomePage = () => {
@@ -15,6 +16,7 @@ export const HomePage = () => {
       <View vertical className='container mx-auto px-4'>
         <PrizesSection />
       </View>
+      <Leaders />
       <CallToActionSection />
       <Footer />
     </View>

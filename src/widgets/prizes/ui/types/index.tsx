@@ -2,18 +2,18 @@ import { useMemo } from 'react';
 
 import { PrizesType } from './type';
 
-import { EPrizeTypes } from '@/entities/prize';
 import { View } from '@/shared/ui/view';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 interface Props {
-  hoveredPrize: EPrizeTypes | null;
-  tabType: EPrizeTypes;
-  setTabType: (type: EPrizeTypes) => void;
+  hoveredPrize: ESymphonyLevels | null;
+  tabType: ESymphonyLevels;
+  setTabType: (type: ESymphonyLevels) => void;
   isDesktop: boolean;
 }
 
 export const PrizesTypes = (props: Props) => {
-  const types = Object.values(EPrizeTypes);
+  const types = Object.values(ESymphonyLevels);
 
   const typesElements = useMemo(() => {
     return types.map((type) => <PrizesType key={type} {...props} type={type} />);

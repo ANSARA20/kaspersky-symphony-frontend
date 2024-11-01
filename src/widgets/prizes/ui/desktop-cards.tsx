@@ -2,10 +2,11 @@ import { PrizesList } from '../config/prizes-list';
 
 import { View } from '@/shared/ui/view';
 import { cn } from '@/shared/lib/utils/ui';
-import { EPrizeTypes, PrizeCard } from '@/entities/prize';
+import { PrizeCard } from '@/entities/prize';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 interface Props {
-  setHoveredPrize: (type: null | EPrizeTypes) => void;
+  setHoveredPrize: (type: null | ESymphonyLevels) => void;
 }
 
 export const DesktopCards = ({ setHoveredPrize }: Props) => {

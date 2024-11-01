@@ -4,11 +4,12 @@ import { PrizesList } from '../config/prizes-list';
 import { PrizesEmablaOptions } from '../config/embla-options';
 
 import { View } from '@/shared/ui/view';
-import { EPrizeTypes, PrizeCard } from '@/entities/prize';
+import { PrizeCard } from '@/entities/prize';
 import Carousel from '@/shared/ui/carousel';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 interface Props {
-  tabType: EPrizeTypes;
+  tabType: ESymphonyLevels;
 }
 
 export const MobileCards = ({ tabType }: Props) => {
