@@ -17,6 +17,9 @@
   .max-w-layout {
     max-width: 1248px;
   }
+  .bottom-shadow {
+    box-shadow: 0 5px 0 hsla(var(--color-primary), 0.4);
+  }
   .shadow-blum {
     box-shadow:
       0 5px 0 hsla(var(--color-primary), 0.4),

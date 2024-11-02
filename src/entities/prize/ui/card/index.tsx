@@ -1,6 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
-import clsx from 'clsx';
-
 import { ICardPrize } from '../../model/card-prize.type';
 
 import { Picture } from '@/shared/ui/picture';
@@ -17,22 +14,20 @@ export const PrizeCard = ({
   bgClass,
   imgClass,
 }: ICardPrize) => {
-  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
-  const isMobile = !useMediaQuery({ query: '(min-width: 600px)' });
-  const cardClass = clsx('relative h-[375px] max-w-[330px] rounded-3xl p-4', {
-    'h-[340px] max-w-[280px]': isMobile,
-  });
-
-  const descClass = clsx('max-w-[300px] text-center leading-6', {
-    'max-w-[240px]': isMobile,
-  });
-
   return (
-    <View centered vertical className={cn(cardClass, bgClass)} gap='sm'>
-      <Text as='h2' className='leading-6' size={isMobile ? 'xl' : '2xl'} weight={5}>
+    <View
+      centered
+      vertical
+      className={cn(
+        'relative h-[340px] max-w-[280px] rounded-3xl p-4 md:h-[375px] md:max-w-[330px]',
+        bgClass,
+      )}
+      gap='sm'
+    >
+      <Text as='h2' className='text-xl leading-6 md:text-2xl' weight={5}>
         {name}
       </Text>
-      <Text as='h2' className='leading-5' size={isMobile ? 'base' : 'xl'}>
+      <Text as='h2' className='text-base leading-5 md:text-xl'>
         {feature}
       </Text>
       <View className='h-[200px] w-[200px]'>
@@ -44,7 +39,11 @@ export const PrizeCard = ({
           width={imgWidth}
         />
       </View>
-      <Text as='h2' className={descClass} size={isMobile ? 'base' : 'xl'} weight={4}>
+      <Text
+        as='h2'
+        className='max-w-[240px] text-center text-base leading-6 md:max-w-[300px] md:text-xl'
+        weight={4}
+      >
         {description}
       </Text>
     </View>

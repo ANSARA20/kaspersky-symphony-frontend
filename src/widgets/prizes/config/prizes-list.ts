@@ -3,7 +3,8 @@ import Broom from '@/shared/assets/images/prizes/broom.png';
 import Bear from '@/shared/assets/images/prizes/bear.png';
 import Hoodie from '@/shared/assets/images/prizes/hoodie.png';
 import PromoCode from '@/shared/assets/images/prizes/promo_code.png';
-import { EPrizeTypes, ICardPrize } from '@/entities/prize/';
+import { ICardPrize } from '@/entities/prize/';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 interface ICardPrizeOptions extends ICardPrize {
   cardClass: string;
@@ -13,7 +14,7 @@ export const PrizesList: ICardPrizeOptions[] = [
   {
     name: 'Носки',
     feature: 'теплые',
-    type: EPrizeTypes.SYMPHONY_SECURITY,
+    type: ESymphonyLevels.SECURITY,
     image: Socks,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
     imgWidth: 332,
@@ -24,7 +25,7 @@ export const PrizesList: ICardPrizeOptions[] = [
   {
     name: 'Веник',
     feature: 'банный',
-    type: EPrizeTypes.SYMPHONY_MDR,
+    type: ESymphonyLevels.MDR,
     image: Broom,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
     imgWidth: 246,
@@ -35,7 +36,7 @@ export const PrizesList: ICardPrizeOptions[] = [
   {
     name: 'Худи',
     feature: 'клевое',
-    type: EPrizeTypes.SYMPHONY_XDR,
+    type: ESymphonyLevels.XDR,
     image: Hoodie,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
     imgWidth: 246,
@@ -46,7 +47,7 @@ export const PrizesList: ICardPrizeOptions[] = [
   {
     name: 'Кнопка',
     feature: 'антистрессовая',
-    type: EPrizeTypes.SYMPHONY_EDR,
+    type: ESymphonyLevels.EDR,
     image: Bear,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
     imgWidth: 246,
@@ -57,7 +58,7 @@ export const PrizesList: ICardPrizeOptions[] = [
   {
     name: 'Промокод',
     feature: 'полезный',
-    type: EPrizeTypes.SYMPHONY_SECURITY,
+    type: ESymphonyLevels.SECURITY,
     image: PromoCode,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
     imgWidth: 298,

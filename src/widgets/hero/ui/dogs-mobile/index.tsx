@@ -1,8 +1,8 @@
-import { EmblaOptionsType } from 'embla-carousel';
 import { useMediaQuery } from 'react-responsive';
 import { useMemo } from 'react';
 
 import { MobileDogsOptions } from '../../config/mobile-dogs-options';
+import { HeroEmblaOptions } from '../../config/embla-options';
 
 import { HeroDogMobile } from './dog-mobile';
 
@@ -10,8 +10,6 @@ import Carousel from '@/shared/ui/carousel';
 import { View } from '@/shared/ui/view';
 
 export const HeroDogsMobile = () => {
-  // ! Вынести в config
-  const OPTIONS: EmblaOptionsType = { loop: true };
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   const slides = useMemo(() => {
@@ -40,7 +38,7 @@ export const HeroDogsMobile = () => {
 
   return (
     <View className='w-dvw'>
-      <Carousel options={OPTIONS} slides={slides} />
+      <Carousel options={HeroEmblaOptions} slides={slides} />
     </View>
   );
 };

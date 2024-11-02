@@ -1,6 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
-import clsx from 'clsx';
-
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
@@ -8,14 +5,6 @@ import puppy from '@/shared/assets/images/puppies/puppy_6.png';
 import { CurvedLine } from '@/shared/assets/icons/curved-line';
 
 export const HeroDescription = () => {
-  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
-  const isDesktop = useMediaQuery({ query: '(min-width: 1260px)' });
-  const isMobile = useMediaQuery({ query: '(min-width: 560px)' });
-
-  const subDescriptionClass = clsx('text-center text-sm xl:text-xl', {
-    'max-w-[420px]': !isMobile,
-  });
-
   return (
     <>
       <Text
@@ -27,16 +16,15 @@ export const HeroDescription = () => {
         тебя классный тест!
       </Text>
       <View className='px-4' width='fit'>
-        <Text className={subDescriptionClass} weight={3}>
+        <Text className='max-w-[420px] text-center text-sm md:max-w-full xl:text-xl' weight={3}>
           Проверь свою мощь в кибербезопасности и получи своего{' '}
           <span className='relative font-semibold'>
             тотемного пёселя{' '}
-            <CurvedLine className='absolute -right-4 -top-1 -z-10' size={isDesktop ? 192 : 150} />
+            <CurvedLine className='absolute -right-4 -top-1 -z-10 w-[150px] xl:w-[192px]' />
             <Picture
               alt='dog'
-              className='absolute -right-12 -top-4 -z-10'
+              className='absolute -right-12 -top-4 -z-10 w-[36px] xl:w-[42px]'
               src={puppy}
-              width={isDesktop ? 42 : 36}
             />
           </span>
         </Text>

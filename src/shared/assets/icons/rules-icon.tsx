@@ -1,6 +1,6 @@
 import { ISVGProps } from '../../model/types/svg-props.type';
 
-function RulesIcon({ size = 14 }: ISVGProps) {
+export const RulesIcon = ({ size = 14 }: ISVGProps) => {
   return (
     <svg viewBox='0 0 14 16' width={size} xmlns='http://www.w3.org/2000/svg'>
       <path
@@ -12,6 +12,4 @@ function RulesIcon({ size = 14 }: ISVGProps) {
       />
     </svg>
   );
-}
-
-export default RulesIcon;
+};

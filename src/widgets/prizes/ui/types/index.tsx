@@ -1,38 +1,30 @@
-import { useMediaQuery } from 'react-responsive';
 import { useMemo } from 'react';
 
 import { PrizesType } from './type';
 
-import { EPrizeTypes } from '@/entities/prize';
 import { View } from '@/shared/ui/view';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 interface Props {
-  hoveredPrize: EPrizeTypes | null;
-  tabType: EPrizeTypes;
-  setTabType: (type: EPrizeTypes) => void;
+  hoveredPrize: ESymphonyLevels | null;
+  tabType: ESymphonyLevels;
+  setTabType: (type: ESymphonyLevels) => void;
   isDesktop: boolean;
 }
 
 export const PrizesTypes = (props: Props) => {
-  const types = Object.values(EPrizeTypes);
-  // ! ты перерендериваешь все содержимое, когда тут можно просто использовать css-media query
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const types = Object.values(ESymphonyLevels);
 
   const typesElements = useMemo(() => {
-    return types.map((type) => (
-      <PrizesType key={type} {...props} isDesktop={isDesktop} type={type} />
-    ));
-  }, [isDesktop, props.tabType]);
+    return types.map((type) => <PrizesType key={type} {...props} type={type} />);
+  }, [props.tabType, props.hoveredPrize]);
 
   return (
     <>
-      {isDesktop ? (
-        <View centered className='mb-8 gap-0'>
-          {typesElements}
-        </View>
-      ) : (
-        <div className='grid grid-cols-2'>{typesElements}</div>
-      )}
+      <View centered className='mb-8 hidden gap-0 xl:flex'>
+        {typesElements}
+      </View>
+      <div className='grid grid-cols-2 xl:hidden'>{typesElements}</div>
     </>
   );
 };
