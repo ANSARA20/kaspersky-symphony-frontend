@@ -107,6 +107,8 @@ export const QuizForm = () => {
                 className={clsx({ 'cursor-default': isChecked })}
                 classNames={{
                   label: 'select-none font-light',
+                  description:
+                    'px-3 py-2 bg-default-100 text-foreground/50 text-sm lg:text-base inner-shadow rounded-xl',
                 }}
                 color={radioColor}
                 description={isChecked && description}

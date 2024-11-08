@@ -28,6 +28,9 @@
   .inner-shadow {
     box-shadow: inset 0px 4px 22px 8px hsla(var(--color-foreground), 0.08);
   }
+  .big-shadow {
+    box-shadow: 0 0 100px 50px hsla(var(--color-background), 1);
+  }
 }
 
 html {
