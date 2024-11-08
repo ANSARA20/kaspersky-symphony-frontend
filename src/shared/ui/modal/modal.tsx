@@ -31,7 +31,7 @@ export const Modal = () => {
             variants={ModalContentVariants}
             {...containerProps}
             className={cn(
-              'relative z-20 px-4',
+              'relative z-20 overflow-x-hidden px-4',
 
               containerProps?.className,
             )}
