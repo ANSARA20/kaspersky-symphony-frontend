@@ -12,10 +12,15 @@ export const addAnimations = (): Config['theme'] => {
         '0%': { transform: 'scale(0)' },
         '100%': { transform: 'scale(1)' },
       },
+      'fade-blur': {
+        '0%': { filter: 'blur(10px)', opacity: '0' },
+        '100%': { filter: 'blur(0px)', opacity: '1' },
+      },
     },
     animation: {
       'ios-spinner': 'ios-spinner 1.2s linear infinite',
       scale: 'scale 0.5s linear',
+      'fade-blur': 'fade-blur 0.2s linear',
     },
   };
 };
