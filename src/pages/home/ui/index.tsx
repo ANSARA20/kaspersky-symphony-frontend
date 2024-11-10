@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { useModal } from '@/shared/ui/modal';
 import { View } from '@/shared/ui/view';
 import { CallToActionSection } from '@/widgets/call-to-action';
@@ -8,18 +6,17 @@ import { Header } from '@/widgets/header';
 import { HeroSection } from '@/widgets/hero';
 import { Leaders } from '@/widgets/leaders';
 import { PrizesSection } from '@/widgets/prizes';
-import { ResultsModal } from '@/entities/results';
 
 export const HomePage = () => {
   const { setModal } = useModal();
 
-  useEffect(() => {
-    setModal(<ResultsModal />, {
-      save: true,
-      scrollable: true,
-      containerProps: { justify: 'start', items: 'center' },
-    });
-  }, []);
+  // useEffect(() => {
+  //   setModal(<ResultsModal />, {
+  //     save: true,
+  //     scrollable: true,
+  //     containerProps: { justify: 'start', items: 'center' },
+  //   });
+  // }, []);
 
   return (
     <View vertical className='gap-0 overflow-x-hidden'>
