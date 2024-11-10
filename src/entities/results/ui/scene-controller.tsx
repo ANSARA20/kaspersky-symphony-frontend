@@ -4,5 +4,7 @@ import { useScenes } from '../model/use-scenes';
 export const ResultsSceneController = () => {
   const { scene } = useScenes();
 
-  return <div>{ResultsScenes[scene]}</div>;
+  console.log(scene);
+
+  return <>{ResultsScenes[scene]}</>;
 };

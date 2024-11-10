@@ -27,7 +27,7 @@ export const ResultsWheel = () => {
       </Text>
 
       <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[55%]'>
-        <Wheel prizes={WheelPrizes} onGetPrize={() => setScene(EResultsScenes.FORM)} />
+        <Wheel prizes={WheelPrizes} onGetPrize={() => setScene('form' as EResultsScenes)} />
       </div>
     </MView>
   );

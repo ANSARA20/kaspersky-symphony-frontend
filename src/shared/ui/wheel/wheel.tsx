@@ -91,8 +91,8 @@ export const Wheel = ({ prizes, onGetPrize }: Props) => {
             <div
               className={clsx('-mt-[30%] flex h-full w-full flex-col items-center justify-center')}
             >
-              <img alt='wheel' className='w-[70%]' src={prize.image} />
-              <span className='text-sm text-white'>{prize.name}</span>
+              <span className='translate-y-8 text-base font-semibold text-white'>{prize.name}</span>
+              <img alt='wheel' className='w-[65%]' src={prize.image} />
             </div>
           </div>
         ))}
