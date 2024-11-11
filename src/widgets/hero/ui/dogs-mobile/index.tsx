@@ -38,7 +38,7 @@ export const HeroDogsMobile = () => {
 
   return (
     <View className='w-dvw'>
-      <Carousel options={HeroEmblaOptions} slides={slides} />
+      <Carousel hideArrows options={HeroEmblaOptions} slides={slides} />
     </View>
   );
 };

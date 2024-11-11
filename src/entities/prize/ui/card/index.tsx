@@ -1,26 +1,19 @@
-import { ICardPrize } from '../../model/card-prize.type';
+import { IPrize } from '../../model/prize.type';
+import { PrizesBg } from '../../config/prizes-bg';
 
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 import { cn } from '@/shared/lib/utils/ui';
 
-export const PrizeCard = ({
-  name,
-  feature,
-  image,
-  description,
-  imgWidth,
-  bgClass,
-  imgClass,
-}: ICardPrize) => {
+export const PrizeCard = ({ name, feature, image, description, type }: IPrize) => {
   return (
     <View
       centered
       vertical
       className={cn(
         'relative h-[340px] max-w-[280px] rounded-3xl p-4 md:h-[375px] md:max-w-[330px]',
-        bgClass,
+        PrizesBg[type],
       )}
       gap='sm'
     >
@@ -33,10 +26,10 @@ export const PrizeCard = ({
       <View className='h-[200px] w-[200px]'>
         <Picture
           alt={name}
-          className={cn('absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2', imgClass)}
+          className={cn('absolute left-1/2 top-1/2 -mt-3 -translate-x-1/2 -translate-y-1/2')}
           draggable={false}
           src={image}
-          width={imgWidth}
+          width={300}
         />
       </View>
       <Text
