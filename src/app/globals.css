@@ -28,6 +28,9 @@
   .inner-shadow {
     box-shadow: inset 0px 4px 22px 8px hsla(var(--color-foreground), 0.08);
   }
+  .big-shadow {
+    box-shadow: 0 0 100px 50px hsla(var(--color-background), 1);
+  }
 }
 
 html {
@@ -43,6 +46,6 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-box-shadow: 0 0 0 1000px hsl(var(--color-primary-700)) inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
