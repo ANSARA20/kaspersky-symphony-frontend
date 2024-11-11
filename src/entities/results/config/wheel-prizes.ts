@@ -1,12 +1,24 @@
-import Socks from '@/shared/assets/images/prizes/socks.png';
-import Broom from '@/shared/assets/images/prizes/broom.png';
-import Bear from '@/shared/assets/images/prizes/bear.png';
-import Hoodie from '@/shared/assets/images/prizes/hoodie.png';
-import PromoCode from '@/shared/assets/images/prizes/promo_code.png';
 import { IPrize } from '@/entities/prize';
 import { ESymphonyLevels } from '@/shared/model/types';
+import Hoodie from '@/shared/assets/images/prizes/hoodie.png';
+import DogToy from '@/shared/assets/images/prizes/dog_toy.png';
+import EnterButton from '@/shared/assets/images/prizes/enter_button.png';
+import Socks from '@/shared/assets/images/prizes/socks.png';
+import CleaningKit from '@/shared/assets/images/prizes/cleaning_kit.png';
+import MousePad from '@/shared/assets/images/prizes/mouse_pad.png';
+import Notebook from '@/shared/assets/images/prizes/notebook.png';
+import Cap from '@/shared/assets/images/prizes/cap.png';
+import Broom from '@/shared/assets/images/prizes/broom.png';
+import PromoCode from '@/shared/assets/images/prizes/promo_code.png';
 
 export const WheelPrizes: IPrize[] = [
+  {
+    name: 'Худи',
+    feature: 'клевое',
+    type: ESymphonyLevels.XDR,
+    image: Hoodie,
+    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
+  },
   {
     name: 'Носки',
     feature: 'теплые',
@@ -21,18 +33,12 @@ export const WheelPrizes: IPrize[] = [
     image: Broom,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
   },
-  {
-    name: 'Худи',
-    feature: 'клевое',
-    type: ESymphonyLevels.XDR,
-    image: Hoodie,
-    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
-  },
+
   {
     name: 'Кнопка',
     feature: 'антистрессовая',
     type: ESymphonyLevels.EDR,
-    image: Bear,
+    image: EnterButton,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
   },
   {
@@ -44,37 +50,37 @@ export const WheelPrizes: IPrize[] = [
   },
   {
     name: 'Набор для чистки',
-    feature: 'теплые',
-    type: ESymphonyLevels.SECURITY,
-    image: Socks,
+    feature: 'компьютера',
+    type: ESymphonyLevels.EDR,
+    image: CleaningKit,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
   },
   {
     name: 'Коврик',
-    feature: 'банный',
-    type: ESymphonyLevels.MDR,
-    image: Broom,
-    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
-  },
-  {
-    name: 'Наклейки',
-    feature: 'клевое',
-    type: ESymphonyLevels.XDR,
-    image: Hoodie,
-    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
-  },
-  {
-    name: 'Брелок',
-    feature: 'антистрессовая',
+    feature: 'для мышки',
     type: ESymphonyLevels.EDR,
-    image: Bear,
+    image: MousePad,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
   },
   {
     name: 'Блокнот',
-    feature: 'полезный',
+    feature: 'стильный',
+    type: ESymphonyLevels.EDR,
+    image: Notebook,
+    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
+  },
+  {
+    name: 'Бейсболка',
+    feature: 'с вышивкой',
+    type: ESymphonyLevels.EDR,
+    image: Cap,
+    description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
+  },
+  {
+    name: 'Собачка',
+    feature: 'мягкая',
     type: ESymphonyLevels.SECURITY,
-    image: PromoCode,
+    image: DogToy,
     description: 'Промокоды на продукцию Касперского, в виде скидки, либо бесплатного доступа.',
   },
 ];

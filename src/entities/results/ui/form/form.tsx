@@ -2,14 +2,19 @@ import { useState } from 'react';
 import { useMask } from '@react-input/mask';
 
 import { FormFields, formValidationSchema } from '../../model/validate';
+import { useScenes } from '../../model/use-scenes';
+import { EResultsScenes } from '../../model/scenes';
 
 import { Button } from '@/shared/ui/button';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ArrowRight } from '@/shared/assets/icons/arrow-right';
+import { EPrizeIds } from '@/entities/prize';
 
 type FormErrors = Partial<Record<FormFields, string[] | undefined>>;
 
 export const ResultsFormInputs = () => {
+  const { setScene, setPrize } = useScenes();
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<FormErrors | null>(null);
 
@@ -36,9 +41,9 @@ export const ResultsFormInputs = () => {
 
     setIsLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsLoading(false);
 
-    console.log('Form data is valid:', result.data);
+    setPrize({ itemId: 'notebook' as EPrizeIds });
+    setScene('prize' as EResultsScenes);
   };
 
   const inputClassname = 'inner-shadow rounded-xl bg-foreground/10 p-3';

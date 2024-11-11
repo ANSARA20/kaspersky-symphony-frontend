@@ -1,26 +1,38 @@
 /* eslint-disable @conarti/feature-sliced/absolute-relative */
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { m } from 'framer-motion';
 
 import { IPrize } from '@/entities/prize';
 import { WheelArrow } from '@/shared/assets/icons/wheel-arrow';
 import { WheelSecret } from '@/shared/assets/icons/wheel-secret';
+import { TResultPrize } from '@/entities/results';
 
 type Props = {
   prizes: IPrize[];
   onGetPrize?: () => void;
+  prize: TResultPrize | null;
+  isShowPrizeCard: boolean;
 };
 
-export const Wheel = ({ prizes, onGetPrize }: Props) => {
+export const Wheel = ({ isShowPrizeCard, prizes, onGetPrize, prize }: Props) => {
   const [isPressed, setIsPressed] = useState(false);
   const [isSpinning, setIsSpinning] = useState(false);
+
+  const [isSelectedPrize] = useState(!!prize);
 
   const wheelRef = useRef<HTMLDivElement>(null);
   const segmentAngle = 360 / prizes.length;
 
-  const spinWheel = () => {
+  useEffect(() => {
+    if (isSelectedPrize && !isShowPrizeCard) {
+      spinWheel(true);
+      setIsPressed(true);
+    }
+  }, []);
+
+  const spinWheel = (disableAnimation = false) => {
     if (isSpinning) return;
 
     setIsSpinning(true);
@@ -28,12 +40,18 @@ export const Wheel = ({ prizes, onGetPrize }: Props) => {
     const totalRotation = spins * 360 + 180;
 
     if (wheelRef.current) {
+      wheelRef.current.style.transition = disableAnimation
+        ? 'none'
+        : 'transform 5s cubic-bezier(0.37, 0, 0.92, 1)';
       wheelRef.current.style.transform = `rotate(${totalRotation}deg)`;
     }
 
-    setTimeout(() => {
-      setIsSpinning(false);
-    }, 5000);
+    setTimeout(
+      () => {
+        setIsSpinning(false);
+      },
+      disableAnimation ? 0 : 5000,
+    );
   };
 
   const handlePress = () => {
@@ -51,20 +69,51 @@ export const Wheel = ({ prizes, onGetPrize }: Props) => {
 
   return (
     <div className='relative aspect-square w-[600px] lg:w-[1050px]'>
-      <WheelArrow className='absolute left-1/2 z-20 w-16 -translate-x-1/2 lg:w-28' />
+      <m.div
+        animate={isShowPrizeCard ? { opacity: 0 } : { opacity: 1 }}
+        className='absolute left-1/2 z-20 w-16 -translate-x-1/2 lg:w-28'
+        initial={{ opacity: 1 }}
+        transition={{ delay: 0.9 }}
+      >
+        <WheelArrow className='w-full' />
+      </m.div>
       {isPressed && (
         <m.button
-          animate={{ opacity: 1 }}
+          animate={isShowPrizeCard ? { opacity: 0 } : { opacity: 1 }}
           className='absolute left-1/2 z-10 h-1/2 w-[35%] -translate-x-1/2'
-          initial={{ opacity: 0 }}
-          transition={{ delay: 3 }}
+          initial={isSelectedPrize ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 3, duration: isShowPrizeCard ? 2 : 1 }}
           onClick={handlePress}
         >
-          <WheelSecret className='z-10 -mt-[6.38rem] w-full lg:-mt-[5.2rem]' />
-          <div className='absolute left-1/2 top-0 -z-10 h-full w-[150%] -translate-x-1/2 animate-pulse rounded-full bg-primary opacity-70 blur-3xl' />
-          <p className='text-gradient-base absolute left-1/2 top-1/2 z-20 -mt-[25%] -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold'>
+          <m.div
+            animate={isShowPrizeCard ? { y: '100%' } : { y: 0 }}
+            className='z-10 -mt-[6.38rem] lg:-mt-[5.2rem]'
+            initial={{ y: 0 }}
+            transition={{ delay: 1, duration: 3, type: 'spring', bounce: 0 }}
+          >
+            <WheelSecret className='w-full' />
+          </m.div>
+          <m.div
+            animate={
+              isShowPrizeCard
+                ? { opacity: 1, scale: 5, x: '-50%' }
+                : { opacity: 0.7, scale: 1, x: '-50%' }
+            }
+            className={clsx(
+              'absolute left-1/2 top-0 -z-10 h-full w-[150%] rounded-full bg-primary blur-3xl',
+              { 'animate-pulse': !isShowPrizeCard },
+            )}
+            initial={{ x: '-50%', scale: 1, opacity: 0.7 }}
+            transition={{ duration: 1.25, ease: 'easeIn' }}
+          />
+          <m.p
+            animate={isShowPrizeCard ? { opacity: 0 } : { opacity: 1 }}
+            className='text-gradient-base absolute left-1/2 top-1/2 z-20 -mt-[25%] -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold'
+            initial={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
             ?
-          </p>
+          </m.p>
         </m.button>
       )}
       <div
@@ -98,9 +147,12 @@ export const Wheel = ({ prizes, onGetPrize }: Props) => {
         ))}
       </div>
 
-      <button
-        className='shadow-blum absolute left-1/2 top-1/2 z-10 aspect-square w-[30%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary text-white disabled:bg-primary-300'
+      <m.button
+        animate={isShowPrizeCard ? { x: '-50%', y: '0%' } : { x: '-50%', y: '-50%' }}
+        className='shadow-blum absolute left-1/2 top-1/2 z-10 aspect-square w-[30%] rounded-full bg-primary text-white disabled:bg-primary-300'
         disabled={isSpinning}
+        initial={{ x: '-50%', y: '-50%' }}
+        transition={{ delay: 1, duration: 3, type: 'spring', bounce: 0 }}
         onClick={handlePress}
       >
         <div className='inner-shadow relative flex h-full w-full items-center justify-center rounded-full'>
@@ -114,7 +166,7 @@ export const Wheel = ({ prizes, onGetPrize }: Props) => {
             </p>
           )}
         </div>
-      </button>
+      </m.button>
     </div>
   );
 };
