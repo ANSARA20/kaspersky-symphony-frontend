@@ -1,27 +1,22 @@
-import { PrizesList } from '../config/prizes-list';
+import { useMemo } from 'react';
+
+import { PrizesCards } from '../utils/prizes-cards';
+import { PrizesEmblaOptions } from '../config/embla-options';
 
 import { View } from '@/shared/ui/view';
-import { cn } from '@/shared/lib/utils/ui';
-import { PrizeCard } from '@/entities/prize';
 import { ESymphonyLevels } from '@/shared/model/types';
+import Carousel from '@/shared/ui/carousel';
 
 interface Props {
   setHoveredPrize: (type: null | ESymphonyLevels) => void;
 }
 
 export const DesktopCards = ({ setHoveredPrize }: Props) => {
+  const prizesCards = useMemo(() => new PrizesCards(setHoveredPrize), [setHoveredPrize]);
+
   return (
-    <View>
-      {PrizesList.map((prize) => (
-        <View
-          key={prize.name}
-          className={cn('-ml-16 first:ml-0', prize.cardClass)}
-          onMouseOut={() => setHoveredPrize(null)}
-          onMouseOver={() => setHoveredPrize(prize.type)}
-        >
-          <PrizeCard {...prize} />
-        </View>
-      ))}
+    <View centered vertical className='w-dvw'>
+      <Carousel hideDots options={PrizesEmblaOptions} slides={prizesCards.slides} />
     </View>
   );
 };

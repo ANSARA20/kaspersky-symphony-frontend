@@ -6,6 +6,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import Dotenv from 'dotenv-webpack'
 
 import { BuildOptions } from './types/build.types';
 
@@ -22,6 +23,11 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
       favicon: path.resolve(paths.public, 'favicon.ico'),
       // filename: path.join('html', 'index.html'),
     }),
+    new Dotenv({
+      path: './.env',
+      systemvars: true,
+      safe: false
+    })
   ];
 
   if (isDev) {

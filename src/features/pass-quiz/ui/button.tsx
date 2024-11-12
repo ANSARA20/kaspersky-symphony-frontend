@@ -1,3 +1,7 @@
+import { m } from 'framer-motion';
+
+import { createFloatingAnimation } from '../utils/createFloatingAnimation';
+
 import puppy1 from '@/shared/assets/images/puppies/puppy_1.png';
 import puppy2 from '@/shared/assets/images/puppies/puppy_2.png';
 import puppy3 from '@/shared/assets/images/puppies/puppy_3.png';
@@ -47,11 +51,21 @@ export const PassQuizButton = ({ className }: Props) => {
         Пройти тест
         <ArrowRight />
       </Button>
-      <Picture alt='puppy1' className='absolute -bottom-6 right-6' src={puppy1} width={48} />
-      <Picture alt='puppy2' className='absolute -top-12 right-2 -z-10' src={puppy2} width={68} />
-      <Picture alt='puppy3' className='absolute -bottom-6 left-12' src={puppy3} width={46} />
-      <Picture alt='puppy4' className='absolute -top-6 right-28' src={puppy4} width={40} />
-      <Picture alt='puppy5' className='absolute -left-9 top-4 -z-10' src={puppy5} width={52} />
+      <m.div {...createFloatingAnimation(0.4)} className='absolute -bottom-6 right-6'>
+        <Picture alt='puppy1' src={puppy1} width={48} />
+      </m.div>
+      <m.div {...createFloatingAnimation(1.2)} className='absolute -top-12 right-2 -z-10'>
+        <Picture alt='puppy2' src={puppy2} width={68} />
+      </m.div>
+      <m.div {...createFloatingAnimation(0.8)} className='absolute -bottom-6 left-12'>
+        <Picture alt='puppy3' src={puppy3} width={46} />
+      </m.div>
+      <m.div {...createFloatingAnimation(0)} className='absolute -top-6 right-28'>
+        <Picture alt='puppy4' src={puppy4} width={40} />
+      </m.div>
+      <m.div {...createFloatingAnimation(1.6)} className='absolute -left-9 top-4 -z-10'>
+        <Picture alt='puppy5' src={puppy5} width={52} />
+      </m.div>
     </div>
   );
 };
