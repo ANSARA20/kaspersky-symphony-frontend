@@ -12,11 +12,6 @@ import { BuildOptions } from './types/build.types';
 export const buildPlugins = (options: BuildOptions): Configuration['plugins'] => {
   const { mode, paths } = options;
 
-  console.log('BUILD ENV after dotenv:', {
-    API_URL: process.env.API_URL,
-    NODE_ENV: process.env.NODE_ENV,
-  });
-
   const isDev = mode === 'development';
   const isProd = mode === 'production';
 
