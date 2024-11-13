@@ -6,12 +6,16 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import Dotenv from 'dotenv-webpack'
 
 import { BuildOptions } from './types/build.types';
 
 export const buildPlugins = (options: BuildOptions): Configuration['plugins'] => {
   const { mode, paths } = options;
+
+  console.log('BUILD ENV after dotenv:', {
+    API_URL: process.env.API_URL,
+    NODE_ENV: process.env.NODE_ENV,
+  });
 
   const isDev = mode === 'development';
   const isProd = mode === 'production';
@@ -23,10 +27,11 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
       favicon: path.resolve(paths.public, 'favicon.ico'),
       // filename: path.join('html', 'index.html'),
     }),
-    new Dotenv({
-      path: './.env',
-      systemvars: true,
-      safe: false
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
     })
   ];
 
