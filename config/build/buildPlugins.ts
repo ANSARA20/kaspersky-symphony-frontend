@@ -12,6 +12,8 @@ import { BuildOptions } from './types/build.types';
 export const buildPlugins = (options: BuildOptions): Configuration['plugins'] => {
   const { mode, paths } = options;
 
+
+
   const isDev = mode === 'development';
   const isProd = mode === 'production';
 
