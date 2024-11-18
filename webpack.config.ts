@@ -3,6 +3,7 @@ import path from 'path';
 import webpack from 'webpack';
 import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { BuildMode, BuildPaths } from 'config/build';
+import dotenv from 'dotenv';
 
 import { buildWebpack } from './config/build/buildWebpack';
 
@@ -14,6 +15,8 @@ interface EnvVariables {
 
 export default (env: EnvVariables) => {
   const { mode, port, bundleAnalyze } = env;
+
+  dotenv.config();
 
   const paths: BuildPaths = {
     output: path.resolve(__dirname, 'build'),
