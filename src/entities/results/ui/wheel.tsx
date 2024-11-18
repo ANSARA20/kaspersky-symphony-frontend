@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { WheelWrapperTransition } from '../config/transitions';
 import { WheelPrizes } from '../config/wheel-prizes';
 import { EResultsScenes } from '../model/scenes';
@@ -10,15 +8,20 @@ import { PrizeCard } from './prize-card';
 import { MView } from '@/shared/ui/motion-view';
 import { Text } from '@/shared/ui/text';
 import { Wheel } from '@/shared/ui/wheel';
+import { Prizes } from '@/entities/prize';
 
 export const ResultsWheel = () => {
-  const { prize, setScene } = useScenes();
+  const { prize, setScene, isShowPrizeCard, setIsShowPrizeCard, setIsShowPrizeAnimation } =
+    useScenes();
 
-  const [showPrizeCard, setShowPrizeCard] = useState(false);
+  const actualPrize = Prizes[prize?.itemId] || undefined;
 
   const handleGetPrize = () => {
     if (prize) {
-      setShowPrizeCard(true);
+      setIsShowPrizeCard(true);
+      setTimeout(() => {
+        setIsShowPrizeAnimation(true);
+      }, 5000);
     } else {
       setScene('form' as EResultsScenes);
     }
@@ -31,7 +34,7 @@ export const ResultsWheel = () => {
       className='relative mb-20 h-min gap-lg overflow-hidden rounded-3xl bg-default-100/90 p-4 pt-12 lg:p-12'
       items='center'
     >
-      {showPrizeCard && <PrizeCard />}
+      {isShowPrizeCard && actualPrize && <PrizeCard prize={actualPrize} />}
 
       <Text className='text-3xl lg:text-4xl' heading={4}>
         Крутим колесо!
@@ -44,7 +47,7 @@ export const ResultsWheel = () => {
 
       <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[55%]'>
         <Wheel
-          isShowPrizeCard={showPrizeCard}
+          isShowPrizeCard={isShowPrizeCard}
           prize={prize}
           prizes={WheelPrizes}
           onGetPrize={handleGetPrize}
