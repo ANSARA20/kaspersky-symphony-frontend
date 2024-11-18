@@ -1,3 +1,5 @@
+import { EPrizeIds } from '@/entities/prize';
+
 export type TResultPrize = {
-  itemId: string;
+  itemId: EPrizeIds;
 };
