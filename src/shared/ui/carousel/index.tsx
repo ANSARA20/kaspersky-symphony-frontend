@@ -4,6 +4,7 @@ import React from 'react';
 import { EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import ClassNames from 'embla-carousel-class-names';
 
 import { DotButton, useDotButton } from './carousel-dot-button';
 import { NextButton, PrevButton, usePrevNextButtons } from './carousel-arrow-buttons';
@@ -27,6 +28,7 @@ const Carousel = ({
 }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: isAutoplay, delay: 3000 }),
+    ClassNames(),
   ]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
