@@ -21,7 +21,7 @@ export const PrizesTypes = (props: Props) => {
 
   return (
     <>
-      <View centered className='mb-8 hidden gap-0 xl:flex'>
+      <View centered className='mb-8 hidden max-h-[56px] gap-0 xl:flex'>
         {typesElements}
       </View>
       <div className='grid grid-cols-2 xl:hidden'>{typesElements}</div>

@@ -3,8 +3,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { PrizesTypes } from './types';
 import { BottomBlur } from './bottom-blur';
-import { DesktopCards } from './desktop-cards';
 import { MobileCards } from './mobile-cards';
+import { SliderCards } from './slider-cards';
 
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
@@ -27,7 +27,7 @@ export const PrizesSection = () => {
         tabType={tapType}
       />
       {isDesktop ? (
-        <DesktopCards setHoveredPrize={setHoveredPrize} />
+        <SliderCards setHoveredPrize={setHoveredPrize} />
       ) : (
         <MobileCards tabType={tapType} />
       )}
