@@ -3,11 +3,12 @@ import clsx from 'clsx';
 import { ResultsWrapperTransition } from '../../config/transitions';
 
 import { MView } from '@/shared/ui/motion-view';
-import { QuizDogs, useQuiz } from '@/entities/quiz';
+import { getQuizDog, useQuiz } from '@/entities/quiz';
 import { View } from '@/shared/ui/view';
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import cup from '@/shared/assets/images/cup.png';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 export const ResultsStatusDesktop = () => {
   const { correctAnswersCount } = useQuiz();
@@ -19,7 +20,7 @@ export const ResultsStatusDesktop = () => {
   return (
     <MView {...ResultsWrapperTransition}>
       <View centered className='w-full animate-float-up lg:w-[600px]'>
-        <Picture alt='Ваш тотемный пёсель' src={QuizDogs.xdr.img} />
+        <Picture alt='Ваш тотемный пёсель' src={getQuizDog(ESymphonyLevels.SECURITY).img} />
       </View>
       <View vertical className={resultsWrapperClassnames} items='center'>
         <Text className='text-gradient-base w-fit text-2xl leading-[1] lg:text-[90px]' heading={2}>

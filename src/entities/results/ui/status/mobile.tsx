@@ -2,12 +2,13 @@ import clsx from 'clsx';
 
 import { ResultsWrapperTransition } from '../../config/transitions';
 
-import { QuizDogs, useQuiz } from '@/entities/quiz';
+import { getQuizDog, useQuiz } from '@/entities/quiz';
 import { MView } from '@/shared/ui/motion-view';
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 import cup from '@/shared/assets/images/cup.png';
+import { ESymphonyLevels } from '@/shared/model/types';
 
 export const ResultsStatusMobile = () => {
   const { correctAnswersCount } = useQuiz();
@@ -28,7 +29,7 @@ export const ResultsStatusMobile = () => {
         </Text>
 
         <View centered className='w-full max-w-96 animate-float-up'>
-          <Picture alt='Ваш тотемный пёсель' src={QuizDogs.xdr.img} />
+          <Picture alt='Ваш тотемный пёсель' src={getQuizDog(ESymphonyLevels.SECURITY).img} />
         </View>
 
         <Text className='text-center text-lg' weight={3}>
