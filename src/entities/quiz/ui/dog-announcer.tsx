@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { useQuiz } from '../model/use-quiz';
 import { getStatusByProgress } from '../lib/get-progress';
-import { QuizDogs } from '../config/dogs';
+import { getQuizDog } from '../config/dogs';
 import { QuizImgTransition, QuizMessageTransition } from '../model/transitions';
 
 import { Text } from '@/shared/ui/text';
@@ -14,7 +14,7 @@ export const QuizDogAnnouncer = () => {
   const { correctAnswersCount } = useQuiz();
 
   const { img, message } = useMemo(
-    () => QuizDogs[getStatusByProgress(correctAnswersCount)],
+    () => getQuizDog(getStatusByProgress(correctAnswersCount)),
     [correctAnswersCount],
   );
 

@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {
-  @import '../shared/assets/fonts/kaspersky-sans/index.css';
-  @import '../shared/assets/fonts/kaspersky-sans-display/index.css';
-}
+@import '../shared/assets/fonts/kaspersky-sans/index.css';
+@import '../shared/assets/fonts/kaspersky-sans-display/index.css';
 
 @layer components {
   .gradient-base {
