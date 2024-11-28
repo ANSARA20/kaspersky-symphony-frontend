@@ -1,6 +1,6 @@
 import { ISVGProps } from '@/shared/model/types/svg-props.type';
 
-export const TG = ({ size = 26 }: ISVGProps) => {
+export const TG = ({ size }: ISVGProps) => {
   return (
     <svg fill='none' viewBox='0 0 25 25' width={size} xmlns='http://www.w3.org/2000/svg'>
       <path
