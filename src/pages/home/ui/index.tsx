@@ -1,3 +1,4 @@
+import { TGButton } from '@/features/tg-button';
 import { useModal } from '@/shared/ui/modal';
 import { View } from '@/shared/ui/view';
 import { CallToActionSection } from '@/widgets/call-to-action';
@@ -30,6 +31,7 @@ export const HomePage = () => {
       <Leaders />
       <CallToActionSection />
       <Footer />
+      <TGButton />
     </View>
   );
 };
