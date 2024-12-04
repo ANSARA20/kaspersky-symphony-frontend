@@ -18,6 +18,7 @@ export const FAQQuestion = ({ pickedQuestion, setPickedQuestion, index }: Props)
       {
         'bg-foreground/10 inner-shadow ': index != pickedQuestion,
         'bg-primary bottom-shadow': index === pickedQuestion,
+        'mb-4 md:mb-10': index === FAQQuestions.length - 1,
       },
     );
   }, [pickedQuestion]);
