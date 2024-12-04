@@ -42,6 +42,14 @@ export const SliderCards = ({ setHoveredPrize }: Props) => {
     }
   };
 
+  const buttonStyle = 'inner-shadow rounded-2xl bg-default-100 p-4';
+  const prevButtonClass = clsx(buttonStyle, 'ml-8 rotate-180', {
+    'brightness-[70%]': startIndex === 0,
+  });
+  const nextButtonClass = clsx(buttonStyle, 'mr-8', {
+    'brightness-[70%]': startIndex === prizesCards.length - 5,
+  });
+
   return (
     <View centered vertical className='relative w-dvw'>
       <View className='h-[500px] w-fit px-8'>
@@ -70,13 +78,10 @@ export const SliderCards = ({ setHoveredPrize }: Props) => {
         </LayoutGroup>
       </View>
       <View className='absolute top-1/2 w-full max-w-[1840px]' justify='between'>
-        <button
-          className='inner-shadow ml-8 rotate-180 rounded-2xl bg-default-100 p-4'
-          onClick={handlePrev}
-        >
+        <button className={prevButtonClass} onClick={handlePrev}>
           <ArrowRight />
         </button>
-        <button className='inner-shadow mr-8 rounded-2xl bg-default-100 p-4' onClick={handleNext}>
+        <button className={nextButtonClass} onClick={handleNext}>
           <ArrowRight />
         </button>
       </View>
