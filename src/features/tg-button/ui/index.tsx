@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import { TGLink } from '../config/tg-link';
+
 import { TG } from '@/shared/assets/icons/tg';
 
 export const TGButton = () => {
@@ -8,7 +10,12 @@ export const TGButton = () => {
   const circleStyle = clsx(circleBorderStyle, 'z-0 animate-scale-opacity');
 
   return (
-    <button className='fixed bottom-[50px] right-[50px] z-10 md:bottom-[80px] md:right-[80px]'>
+    <a
+      className='fixed bottom-[50px] right-[50px] z-10 md:bottom-[80px] md:right-[80px]'
+      href={TGLink}
+      rel='noreferrer'
+      target='_blank'
+    >
       <div className={clsx(positionStyle, 'z-10 rounded-full bg-[#00A0B2] p-2 md:p-3')}>
         <TG size={36} />
       </div>
@@ -29,6 +36,6 @@ export const TGButton = () => {
           )}
         />
       </div>
-    </button>
+    </a>
   );
 };
