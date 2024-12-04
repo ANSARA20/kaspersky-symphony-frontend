@@ -1,25 +1,28 @@
 import clsx from 'clsx';
 
 import { ResultsWrapperTransition } from '../../config/transitions';
+import { getStatus, getStatusInfo } from '../../lib/get-status';
 
-import { getQuizDog, useQuiz } from '@/entities/quiz';
+import { useQuiz } from '@/entities/quiz';
 import { MView } from '@/shared/ui/motion-view';
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 import cup from '@/shared/assets/images/cup.png';
-import { ESymphonyLevels } from '@/shared/model/types';
 
 export const ResultsStatusMobile = () => {
   const { correctAnswersCount } = useQuiz();
+
+  const status = getStatus(correctAnswersCount);
+  const { title, description, img } = getStatusInfo(status);
 
   const resultsWrapperClassnames = clsx('gap-8 rounded-3xl bg-secondary-100/80 px-4 py-12');
 
   return (
     <MView {...ResultsWrapperTransition}>
       <View vertical className={resultsWrapperClassnames} items='center'>
-        <Text className='text-gradient-base w-fit text-5xl leading-[1]' heading={2}>
-          Ультра-дог
+        <Text className='text-gradient-base w-fit text-center text-5xl leading-[1]' heading={2}>
+          {title}
         </Text>
 
         <img alt='Кубок' className='absolute -right-8 top-24 w-32' src={cup} />
@@ -29,13 +32,11 @@ export const ResultsStatusMobile = () => {
         </Text>
 
         <View centered className='w-full max-w-96 animate-float-up'>
-          <Picture alt='Ваш тотемный пёсель' src={getQuizDog(ESymphonyLevels.SECURITY).img} />
+          <Picture alt='Ваш тотемный пёсель' src={img} />
         </View>
 
         <Text className='text-center text-lg' weight={3}>
-          Вы настоящий терминатор-гигачад в вопросах кибер-безопасности. Если это не ваша работа, то
-          возможно, пора подумать о смене профессии. Понять, о чем разговаривают два сотрудника
-          службы безопасности для вас...
+          {description}
         </Text>
       </View>
     </MView>
