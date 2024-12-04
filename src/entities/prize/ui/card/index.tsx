@@ -12,7 +12,7 @@ export const PrizeCard = ({ name, feature, image, description, type }: IPrize) =
       centered
       vertical
       className={cn(
-        'relative h-[340px] max-w-[280px] rounded-3xl p-4 shadow-2xl md:h-[375px] md:max-w-[330px]',
+        'relative h-[340px] w-[280px] rounded-3xl p-4 shadow-2xl md:h-[375px] xl:w-[290px] 2xl:w-[330px]',
         PrizesBg[type],
       )}
       gap='sm'
