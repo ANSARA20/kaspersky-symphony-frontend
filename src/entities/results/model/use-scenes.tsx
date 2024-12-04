@@ -15,7 +15,7 @@ interface ScenesStore {
 }
 
 export const useScenes = create<ScenesStore>()((set) => ({
-  scene: 'wheel' as EResultsScenes,
+  scene: 'prize' as EResultsScenes,
   prize: null,
   isShowPrizeCard: false,
   isShowPrizeAnimation: false,

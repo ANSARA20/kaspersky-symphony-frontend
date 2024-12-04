@@ -19,7 +19,7 @@ export const generateColorVariables = (options: CorePluginConfig) => {
         return;
       }
     });
-
+    
     colorVars[cssSelector] = colorVariables;
   }
 
