@@ -13,9 +13,13 @@ export const Leaders = () => {
   const [leaders, setLeaders] = useState<ILeader[]>([]);
 
   const getLeaders = async () => {
-    const leaders = await fetchLeaders();
+    try {
+      const leaders = await fetchLeaders();
 
-    setLeaders(leaders);
+      setLeaders(leaders);
+    } catch (error) {
+      setLeaders([]);
+    }
   };
 
   useEffect(() => {
