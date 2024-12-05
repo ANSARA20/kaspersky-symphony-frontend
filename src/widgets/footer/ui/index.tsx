@@ -39,18 +39,18 @@ export const Footer = () => {
                 <FileQuestion />
                 FAQ
               </button>
-              <Link className='flex items-center gap-2' to=''>
+              <Link className='flex items-center gap-2' target='_blank' to=''>
                 <RulesIcon />
                 Правила конкурса
               </Link>
-              <Link className='flex items-center gap-2' to=''>
+              <Link className='flex items-center gap-2' target='_blank' to=''>
                 <FileCheck />
                 Юридическая информация
               </Link>
             </View>
             <View className='flex-col items-start gap-sm lg:flex-row lg:items-center xl:gap-lg'>
               {FooterDocuments.map(({ title, href }, index) => (
-                <Link key={index} className='text-[12px]' to={href}>
+                <Link key={index} className='text-[12px]' target='_blank' to={href}>
                   {title}
                 </Link>
               ))}
@@ -61,7 +61,7 @@ export const Footer = () => {
           </Text>
           <View gap='lg' width='fit'>
             {FooterSocialNetworks.map(({ icon, href }, index) => (
-              <View key={index} as={Link} to={href} width='fit'>
+              <View key={index} as={Link} target='_blank' to={href} width='fit'>
                 {icon}
               </View>
             ))}
