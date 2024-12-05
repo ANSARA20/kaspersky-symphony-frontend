@@ -25,7 +25,7 @@ export const Footer = () => {
       <View vertical className='max-w-layout container mx-auto px-8 pb-6 pt-10 sm:px-4'>
         <FooterCols />
         <Text className='hidden lg:block' opacity={5}>
-          © 2024 Kaspersky
+          © 2024 АО «Лаборатория Касперского»
         </Text>
         <View className='flex-col items-start lg:flex-row lg:items-center' justify='between'>
           <View vertical>
