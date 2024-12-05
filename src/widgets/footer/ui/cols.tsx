@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FooterColsConst } from '../config/cols';
 
 import { Text } from '@/shared/ui/text';
@@ -13,9 +15,9 @@ export const FooterCols = () => {
           </Text>
           <View vertical className='gap-3'>
             {rows.map((row, index) => (
-              <Text key={index} as='a' href={row.href} size='sm'>
+              <Link key={index} className='text-sm' to={row.href}>
                 {row.title}
-              </Text>
+              </Link>
             ))}
           </View>
         </View>

@@ -4,6 +4,8 @@ export const fetchLeaders = async () => {
   try {
     const response = await fetch(`${url}/users/leaders`);
 
+    if (!response.ok) throw new Error();
+
     return response.json();
   } catch (error) {
     return [];
