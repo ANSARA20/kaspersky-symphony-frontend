@@ -6,18 +6,18 @@ interface IFooterDocuments {
 export const FooterDocuments: IFooterDocuments[] = [
   {
     title: 'Политика конфиденциальности',
-    href: '',
+    href: 'https://www.kaspersky.ru/web-privacy-policy',
   },
   {
     title: 'Антикоррупционная политика',
-    href: '',
+    href: 'https://www.kaspersky.ru/anti-corruption-policy',
   },
   {
     title: 'Лицензионное соглашение B2C',
-    href: '',
+    href: 'https://www.kaspersky.ru/end-user-license-agreement',
   },
   {
     title: 'Лицензионное соглашение B2B',
-    href: '',
+    href: 'https://www.kaspersky.ru/business/eula',
   },
 ];

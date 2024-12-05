@@ -14,56 +14,56 @@ export const FooterColsConst: IFooterCol[] = [
     rows: [
       {
         title: 'Kaspersky Standard',
-        href: '',
+        href: 'https://www.kaspersky.ru/standard',
       },
       {
         title: 'Kaspersky Plus',
-        href: '',
+        href: 'https://www.kaspersky.ru/plus',
       },
       {
         title: 'Kaspersky Premium',
-        href: '',
+        href: 'https://www.kaspersky.ru/premium',
       },
       {
         title: 'Kaspersky Safe Kids',
-        href: '',
+        href: 'https://www.kaspersky.ru/safe-kids',
       },
       {
         title: 'Kaspersky Who Calls',
-        href: '',
+        href: 'https://www.kaspersky.ru/caller-id',
       },
       {
         title: 'Kaspersky Password Manager',
-        href: '',
+        href: 'https://www.kaspersky.ru/password-manager',
       },
       {
         title: 'Все решения',
-        href: '',
+        href: 'https://www.kaspersky.ru/home-security',
       },
     ],
   },
   {
-    title: 'Решения для дома',
+    title: 'Решения по типу устройств',
     rows: [
       {
         title: 'Антивирус для Android',
-        href: '',
+        href: 'https://www.kaspersky.ru/android-antivirus',
       },
       {
         title: 'Антивирус для Mac OS',
-        href: '',
+        href: 'https://www.kaspersky.ru/mac-antivirus',
       },
       {
         title: 'Антивирус для мобильных устройств',
-        href: '',
+        href: 'https://www.kaspersky.ru/mobile-security',
       },
       {
         title: 'Антивирус для Windows',
-        href: '',
+        href: 'https://www.kaspersky.ru/windows-antivirus',
       },
       {
         title: 'Все решения',
-        href: '',
+        href: 'https://www.kaspersky.ru/home-security',
       },
     ],
   },
@@ -72,15 +72,15 @@ export const FooterColsConst: IFooterCol[] = [
     rows: [
       {
         title: 'Kaspersky Small Office Security',
-        href: '',
+        href: 'https://www.kaspersky.ru/small-business-security/small-office-security',
       },
       {
         title: 'Kaspersky Endpoint Security Cloud',
-        href: '',
+        href: 'https://www.kaspersky.ru/small-to-medium-business-security/cloud',
       },
       {
         title: 'Все решения',
-        href: '',
+        href: 'https://www.kaspersky.ru/small-to-medium-business-security',
       },
     ],
   },
@@ -89,23 +89,23 @@ export const FooterColsConst: IFooterCol[] = [
     rows: [
       {
         title: 'Сервисы кибербезопасности',
-        href: '',
+        href: 'https://www.kaspersky.ru/enterprise-security/cybersecurity-services',
       },
       {
         title: 'Kaspersky Anti Targeted Attack',
-        href: '',
+        href: 'https://www.kaspersky.ru/enterprise-security/anti-targeted-attack-platform',
       },
       {
         title: 'Защита конечных устройств',
-        href: '',
+        href: 'https://www.kaspersky.ru/enterprise-security/endpoint',
       },
       {
         title: 'Security для виртуальных и облачных сред',
-        href: '',
+        href: 'https://www.kaspersky.ru/enterprise-security/cloud-security',
       },
       {
         title: 'Все решения',
-        href: '',
+        href: 'https://www.kaspersky.ru/enterprise-security',
       },
     ],
   },
