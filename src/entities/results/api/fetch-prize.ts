@@ -1,8 +1,14 @@
 export const fetchPrize = async () => {
-  const url = process.env.API_URL;
-  const response = await fetch(`${url}/user`, {
-    method: 'POST',
-  });
+  try {
+    const url = process.env.API_URL;
+    const response = await fetch(`${url}/user`, {
+      method: 'POST',
+    });
 
-  return response.json();
+    if (!response.ok) throw new Error();
+
+    return response.json();
+  } catch (error) {
+    return null;
+  }
 };
