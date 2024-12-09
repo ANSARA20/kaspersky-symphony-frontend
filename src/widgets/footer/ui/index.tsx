@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FooterDocuments } from '../config/documents';
 import { FooterSocialNetworks } from '../config/social-networks';
 
@@ -23,7 +25,7 @@ export const Footer = () => {
       <View vertical className='max-w-layout container mx-auto px-8 pb-6 pt-10 sm:px-4'>
         <FooterCols />
         <Text className='hidden lg:block' opacity={5}>
-          © 2024 Kaspersky
+          © 2024 АО «Лаборатория Касперского»
         </Text>
         <View className='flex-col items-start lg:flex-row lg:items-center' justify='between'>
           <View vertical>
@@ -37,29 +39,29 @@ export const Footer = () => {
                 <FileQuestion />
                 FAQ
               </button>
-              <View as='a' className='gap-2' href='' width='fit'>
+              <Link className='flex items-center gap-2' target='_blank' to=''>
                 <RulesIcon />
                 Правила конкурса
-              </View>
-              <View as='a' className='gap-2' href='' width='fit'>
+              </Link>
+              <Link className='flex items-center gap-2' target='_blank' to=''>
                 <FileCheck />
                 Юридическая информация
-              </View>
+              </Link>
             </View>
             <View className='flex-col items-start gap-sm lg:flex-row lg:items-center xl:gap-lg'>
               {FooterDocuments.map(({ title, href }, index) => (
-                <Text key={index} as='a' className='text-[12px]' href={href}>
+                <Link key={index} className='text-[12px]' target='_blank' to={href}>
                   {title}
-                </Text>
+                </Link>
               ))}
             </View>
           </View>
           <Text className='block lg:hidden' size='sm'>
-            © 2024 Kaspersky
+            © 2024 АО «Лаборатория Касперского»
           </Text>
           <View gap='lg' width='fit'>
             {FooterSocialNetworks.map(({ icon, href }, index) => (
-              <View key={index} as='a' href={href} width='fit'>
+              <View key={index} as={Link} target='_blank' to={href} width='fit'>
                 {icon}
               </View>
             ))}

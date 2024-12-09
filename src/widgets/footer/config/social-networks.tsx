@@ -13,26 +13,26 @@ interface IFooterSocialNetworks {
 export const FooterSocialNetworks: IFooterSocialNetworks[] = [
   {
     icon: <TG />,
-    href: '',
+    href: 'https://t.me/kasperskylab_ru',
   },
   {
     icon: <YouTube />,
-    href: '',
+    href: 'https://www.youtube.com/@KasperskyRussia',
   },
   {
     icon: <VK />,
-    href: '',
+    href: 'https://vk.com/kaspersky',
   },
   {
     icon: <X />,
-    href: '',
+    href: 'https://twitter.com/Kaspersky_ru',
   },
   {
     icon: <Dzen />,
-    href: '',
+    href: 'https://dzen.ru/kaspersky_ru',
   },
   {
     icon: <C />,
-    href: '',
+    href: 'https://forum.kasperskyclub.ru/',
   },
 ];
