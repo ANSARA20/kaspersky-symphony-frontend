@@ -26,9 +26,9 @@ export const PrizesType = ({ hoveredPrize, type, tabType, setTabType }: Props) =
   };
 
   return (
-    <View centered className='relative h-full w-full px-2 py-4 md:px-4 xl:w-fit'>
+    <View centered className='relative h-fit w-full px-2 py-4 md:px-4 xl:w-fit'>
       <button
-        className='inner-shadow h-full w-full max-w-[160px] text-wrap rounded-xl bg-white bg-opacity-10 px-6 py-2 text-lg leading-5 md:max-w-full md:text-nowrap md:px-12 md:py-4'
+        className='inner-shadow h-full max-h-[56px] w-full max-w-[160px] text-wrap rounded-xl bg-white bg-opacity-10 px-6 py-2 text-lg leading-5 md:max-w-full md:text-nowrap md:px-12 md:py-4'
         onClick={handleClick}
       >
         {SymphonyNames[type]}
