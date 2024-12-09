@@ -1,0 +1,1 @@
+export { AdminSpinsPage } from './ui';
