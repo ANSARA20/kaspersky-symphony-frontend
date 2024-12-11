@@ -28,7 +28,12 @@ export const AdminPrizesPage = () => {
     getPrizes();
   }, []);
 
-  if (loading) return <Spinner />;
+  if (loading)
+    return (
+      <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <Spinner />
+      </div>
+    );
 
   if (error) return <Text>{error}</Text>;
 
