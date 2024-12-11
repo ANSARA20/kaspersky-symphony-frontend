@@ -1,5 +1,7 @@
 import Cookies from 'js-cookie';
 
+import { formatSpins } from '../lib/utils/format-spins';
+
 export const fetchSpins = async ({ search, page }: { search?: string; page?: number }) => {
   try {
     const apiUrl = process.env.API_URL;
@@ -18,13 +20,7 @@ export const fetchSpins = async ({ search, page }: { search?: string; page?: num
     const spins = await response.json();
 
     return {
-      items: spins.map((spin: any) => ({
-        id: spin.id,
-        date: new Date(spin.date).toLocaleString(),
-        prizeId: spin.prizeId,
-        prizeType: spin.prize.type,
-        userId: spin.userId,
-      })),
+      items: formatSpins(spins),
     };
   } catch (error) {
     return { error: 'Ошибка загрузки выйгышей', status: +error };
