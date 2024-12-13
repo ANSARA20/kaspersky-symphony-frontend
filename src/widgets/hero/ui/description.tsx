@@ -9,11 +9,11 @@ export const HeroDescription = () => {
     <>
       <Text
         as='h2'
-        className='mt-10 max-w-[720px] text-center text-[20px] leading-7 md:text-[32px] md:leading-10 lg:leading-10 xl:text-[40px] xl:leading-10'
+        className='mt-10 max-w-[1080px] text-center text-[20px] leading-7 md:text-[32px] md:leading-10 lg:leading-10 xl:text-[40px] xl:leading-10'
         weight={6}
       >
-        Kaspersky и <span className='text-gradient-base'>технология Symphony</span> подготовили для
-        тебя классный тест!
+        Испытай себя в тесте от Kaspersky и линейки решений для защиты бизнеса{' '}
+        <span className='text-gradient-base'>Kaspersky Symphony!</span>
       </Text>
       <View className='px-4' width='fit'>
         <Text className='max-w-[420px] text-center text-sm md:max-w-full xl:text-xl' weight={3}>
