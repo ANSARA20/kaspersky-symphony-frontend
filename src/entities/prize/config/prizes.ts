@@ -97,7 +97,7 @@ export const Prizes: Record<EPrizeIds, IPrize> = {
   [EPrizeIds.CAP]: {
     name: 'Бейсболка',
     feature: 'с вышивкой',
-    description: 'Стильная защита от солнечных лучей',
+    description: 'Стильная защита от солнечных',
     type: ESymphonyLevels.EDR,
     image: Cap,
   },
