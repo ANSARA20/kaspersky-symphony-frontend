@@ -6,8 +6,8 @@ import { EResultsScenes } from '../model/scenes';
 import { useScenes } from '../model/use-scenes';
 import { getStatus } from '../lib/get-status';
 
-import { PrizeCard } from './prize-card';
-import { NoPrize } from './no-prize';
+import { NoPrize } from './prize/no-prize';
+import { PrizeCard } from './prize/prize-card';
 
 import { MView } from '@/shared/ui/motion-view';
 import { Text } from '@/shared/ui/text';
@@ -72,9 +72,8 @@ export const ResultsWheel = () => {
             {scene === 'wheel' && (
               <>
                 Пришло время призов! Готов испытать удачу? Жми на кнопку и крути{' '}
-                <span className='text-gradient-base pr-px'>колесо фортуны</span>. <br /> Осталось
-                только заполнить форму, чтобы мы могли связаться с тобой для получения приза. Все
-                быстро и очень просто!
+                <span className='text-gradient-base pr-px'>колесо фортуны</span>. <br /> Тебя ждут
+                гарантированные подарки: от неожиданных сюрпризов до лучшего худи во всей истории.
               </>
             )}
             {scene === 'prize' && 'Поздравляем! Еще чуть-чуть и классный приз уже будет у тебя!'}

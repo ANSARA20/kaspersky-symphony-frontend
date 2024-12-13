@@ -3,17 +3,21 @@ import { useMask } from '@react-input/mask';
 
 import { FormFields, formValidationSchema } from '../../model/validate';
 import { useScenes } from '../../model/use-scenes';
+import { fetchPrize, getPrizeErrorMessage, PRIZE_ERRORS, TUserDto } from '../../api/fetch-prize';
+import { getStatus } from '../../lib/get-status';
 import { EResultsScenes } from '../../model/scenes';
+import { TResultPrize } from '../../model/prize';
 
 import { Button } from '@/shared/ui/button';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ArrowRight } from '@/shared/assets/icons/arrow-right';
-import { EPrizeIds } from '@/entities/prize';
+import { useQuiz } from '@/entities/quiz';
 
 type FormErrors = Partial<Record<FormFields, string[] | undefined>>;
 
 export const ResultsFormInputs = () => {
   const { setScene, setPrize } = useScenes();
+  const { correctAnswersCount } = useQuiz();
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<FormErrors | null>(null);
@@ -39,11 +43,39 @@ export const ResultsFormInputs = () => {
     }
     setError(null);
 
-    setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const status = getStatus(correctAnswersCount);
 
-    setPrize({ itemId: 'notebook' as EPrizeIds });
-    setScene('prize' as EResultsScenes);
+    const user: TUserDto = {
+      name: result.data.name,
+      email: result.data.email,
+      phone: result.data.phone,
+      job: result.data.work,
+      level: status,
+    };
+
+    setIsLoading(true);
+
+    try {
+      const prize = await fetchPrize(user);
+
+      if (!!prize.error) {
+        throw new Error(prize.message);
+      }
+
+      setPrize(prize as TResultPrize);
+      setScene('prize' as EResultsScenes);
+    } catch (error) {
+      if (error.message === PRIZE_ERRORS.NO_PRIZE) {
+        setPrize(null);
+        setScene('prize' as EResultsScenes);
+      }
+
+      const errorMessage = getPrizeErrorMessage(error.message);
+
+      setError({ email: [errorMessage] });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const inputClassname = 'inner-shadow rounded-xl bg-foreground/10 p-3';
