@@ -4,8 +4,12 @@ import { Suspense } from 'react';
 import { HomePage } from '@/pages/home';
 import { Spinner } from '@/shared/ui/spinner';
 import { View } from '@/shared/ui/view';
-import { AdminPage } from '@/pages/admin';
 import { LoginPage } from '@/pages/login';
+import { AdminLayout } from '@/shared/ui/admin-layout';
+import { AdminHeader } from '@/widgets/admin-header';
+import { AdminUsersPage } from '@/pages/admin-users';
+import { AdminPrizesPage } from '@/pages/admin-prizes';
+import { AdminSpinsPage } from '@/pages/admin-spins';
 
 export const router = createBrowserRouter([
   {
@@ -25,8 +29,18 @@ export const router = createBrowserRouter([
   },
   {
     path: '/admin',
-    element: <AdminPage />,
+    element: (
+      <AdminLayout>
+        <AdminHeader />
+      </AdminLayout>
+    ),
     errorElement: <Navigate to='/admin/login' />,
+    children: [
+      { index: true, element: <Navigate replace to='users' /> },
+      { path: 'users', element: <AdminUsersPage /> },
+      { path: 'spins', element: <AdminSpinsPage /> },
+      { path: 'prizes', element: <AdminPrizesPage /> },
+    ],
   },
   {
     path: '/admin/login',

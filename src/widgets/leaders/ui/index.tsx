@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { ILeader } from '../model/leader.type';
 import { fetchLeaders } from '../api/fetch-leaders';
+import { LeadersExample } from '../config/leaders-example';
 
 import { Leader } from './leader';
 
@@ -15,7 +16,9 @@ export const Leaders = () => {
   const getLeaders = async () => {
     const leaders = await fetchLeaders();
 
-    setLeaders(leaders);
+    if (leaders.length > 5) {
+      setLeaders(leaders);
+    } else [setLeaders([...LeadersExample, ...leaders])];
   };
 
   useEffect(() => {
@@ -31,9 +34,9 @@ export const Leaders = () => {
       >
         Лидеры конкурса!
       </Text>
-      <Text className='mb-6 max-w-[340px] px-4 text-center text-base md:max-w-[640px] md:text-lg lg:mb-10 lg:text-[24px]'>
+      <Text className='mb-6 max-w-[340px] px-4 text-center text-base md:max-w-[740px] md:text-lg lg:mb-10 lg:text-[24px]'>
         Эти участники уже получили свои призы от{' '}
-        <span className='text-gradient-base'>Symphony</span>, и мы рады вручить тебе твою
+        <span className='text-gradient-base'>Kaspersky Symphony</span>, и мы рады вручить тебе твою
         заслуженную награду!
       </Text>
       <Marquee gradient={false} speed={50}>
