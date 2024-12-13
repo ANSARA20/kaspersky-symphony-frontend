@@ -1,17 +1,12 @@
-import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import { useLogout } from '../libs/hooks/use-logout';
 
 import { Button } from '@/shared/ui/button';
 
 export const Logout = () => {
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    Cookies.remove('token');
-    navigate('/admin/login');
-  };
+  const logout = useLogout();
 
   return (
-    <Button className='font-medium' color='default' onClick={handleLogout}>
+    <Button className='font-medium' color='default' onClick={logout}>
       Выйти
     </Button>
   );

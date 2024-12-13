@@ -1,27 +1,34 @@
+import { EPrizeIds } from '@/entities/prize';
+
 export const LeadersExample = [
   {
-    name: 'Анашкин Матвей Дмитриевич',
+    id: 9999900,
+    name: 'x Иван x',
     phone: '+7 (985) ***-**-**',
-    prizeId: 'promo_code',
+    prizeId: EPrizeIds.BROOM,
   },
   {
-    name: 'Анашкин Матвей Дмитриевич',
+    id: 9999901,
+    name: 'x Сергей x',
     phone: '+7 (985) ***-**-**',
-    prizeId: 'hoodie',
+    prizeId: EPrizeIds.HOODIE,
   },
   {
-    name: 'Анашкин Матвей Дмитриевич',
+    id: 9999902,
+    name: 'x Наталья x',
     phone: '+7 (985) ***-**-**',
-    prizeId: 'broom',
+    prizeId: EPrizeIds.CAP,
   },
   {
-    name: 'Анашкин Матвей Дмитриевич',
+    id: 9999903,
+    name: 'x Петр x',
     phone: '+7 (985) ***-**-**',
-    prizeId: 'bear',
+    prizeId: EPrizeIds.CLEANING_KIT,
   },
   {
-    name: 'Анашкин Матвей Дмитриевич',
+    id: 9999904,
+    name: 'x Анна x',
     phone: '+7 (985) ***-**-**',
-    prizeId: 'socks',
+    prizeId: EPrizeIds.PHONE_STAND,
   },
 ];
