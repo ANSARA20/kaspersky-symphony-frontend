@@ -11,7 +11,13 @@ export enum FormFields {
 }
 
 export const formValidationSchema = z.object({
-  [FormFields.NAME]: z.string().min(1, 'Поле "ФИО" обязательно для заполнения'),
+  [FormFields.NAME]: z
+    .string()
+    .min(1, 'Поле "ФИО" обязательно для заполнения')
+    .refine(
+      (val) => val.trim().split(/\s+/).length >= 2,
+      'Поле "ФИО" должно содержать минимум 2 слова – фамилию и имя',
+    ),
   [FormFields.WORK]: z.string().min(1, 'Поле "Место работы" обязательно для заполнения'),
   [FormFields.PHONE]: z
     .string()
