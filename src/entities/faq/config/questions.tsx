@@ -34,7 +34,7 @@ export const FAQQuestions = [
     answer: (
       <AnswerWrapper>
         Розыгрыш проводится каждую неделю с <b>13 января 2025 года (00:00:00)</b> по{' '}
-        <b>9 февраля 2025 года (23:59:59)</b>
+        <b>9 февраля 2025 года (23:59:59).</b>
       </AnswerWrapper>
     ),
   },
@@ -60,7 +60,7 @@ export const FAQQuestions = [
     answer: (
       <AnswerWrapper>
         Каждую неделю у вас есть 3 попытки пройти тест. В рамках одной недели можно выиграть только
-        один приз, а за весь период – до 4 призов
+        один приз, а за весь период – до 4 призов.
       </AnswerWrapper>
     ),
   },
@@ -146,7 +146,7 @@ export const FAQQuestions = [
       <AnswerWrapper>
         <ul className={clsx(listClass, 'list-disc')}>
           <ListItem>Использование программ для фальсификации участия.</ListItem>
-          <ListItem>Предоставление неправильных или поддельных персональных данных</ListItem>
+          <ListItem>Предоставление неправильных или поддельных персональных данных.</ListItem>
           <ListItem>Многократное участие под разными учетными записями.</ListItem>
         </ul>
       </AnswerWrapper>

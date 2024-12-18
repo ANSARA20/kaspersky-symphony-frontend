@@ -44,7 +44,7 @@ export const PassQuizButton = ({ className }: Props) => {
   return (
     <div className={cn('relative', className)}>
       <Button
-        className='shadow-blum gap-4 rounded-full px-16 py-8 active:translate-y-1 xl:px-32 xl:py-12'
+        className='shadow-blum gap-4 rounded-full px-16 py-8 text-xl active:translate-y-1 xl:px-32 xl:py-12'
         size='lg'
         onClick={handleOpenQuiz}
       >

@@ -17,7 +17,7 @@ export const HeroDescription = () => {
       </Text>
       <View className='px-4' width='fit'>
         <Text className='max-w-[420px] text-center text-sm md:max-w-full xl:text-xl' weight={3}>
-          Проверь свою мощь в кибербезопасности и получи своего{' '}
+          Проверь свою мощь в кибербезе и получи{' '}
           <span className='relative font-semibold'>
             тотемного пёселя{' '}
             <CurvedLine className='absolute -right-4 -top-1 -z-10 w-[150px] xl:w-[192px]' />
