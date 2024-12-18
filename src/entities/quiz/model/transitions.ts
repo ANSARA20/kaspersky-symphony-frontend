@@ -7,7 +7,7 @@ export const QuizMessageTransition: any = {
   transition: { type: 'spring', duration: 0.7, bounce: 0 },
 };
 
-export const QuizImgTransition: MotionProps = {
+export const QuizImgTransition: any = {
   animate: { rotate: 0, scale: 1, opacity: 1 },
   initial: { rotate: -90, scaleX: -1, scale: 0.5, opacity: 0 },
   exit: { scale: 0.5, opacity: 0, filter: 'blur(24px)', y: 40, transition: { delay: 0.1 } },
