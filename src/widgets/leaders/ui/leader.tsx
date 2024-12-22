@@ -10,6 +10,7 @@ export const Leader = ({ name, prizeId, phone }: ILeader) => {
     <View
       className='inner-shadow relative gap-2 overflow-hidden rounded-2xl bg-default-100 px-5 py-5 lg:gap-3 lg:rounded-3xl lg:px-8 lg:py-7'
       items='end'
+      width='fit'
     >
       <Picture
         className='absolute left-0 top-1/2 w-[60px] -translate-y-1/2 lg:w-[85px]'

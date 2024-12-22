@@ -32,11 +32,11 @@ export const Leaders = () => {
         className='px-4 text-center text-[24px] md:text-[32px] lg:text-[40px]'
         weight={6}
       >
-        Лидеры конкурса!
+        Победители конкурса!
       </Text>
       <Text className='mb-6 max-w-[340px] px-4 text-center text-base md:max-w-[740px] md:text-lg lg:mb-10 lg:text-[24px]'>
         Эти участники уже получили свои призы от{' '}
-        <span className='text-gradient-base'>Kaspersky Symphony</span>, и мы рады вручить тебе твою
+        <span className='text-gradient-base'>Kaspersky Symphony</span>, и мы рады вручить тебе
         заслуженную награду!
       </Text>
       <Marquee gradient={false} speed={50}>

@@ -19,7 +19,7 @@ export const CallToActionText = () => {
         Чем больше правильных ответов ты дашь, тем круче твой лут! Только не зевай, у тебя есть{' '}
         <span className='relative font-semibold'>
           3 попытки в неделю!
-          <CurvedLine className='absolute -right-2 -top-2 -z-10 w-[150px] rotate-3 xl:w-[212px]' />
+          <CurvedLine className='absolute -right-2 -top-1 -z-10 w-[150px] rotate-3 md:-top-2 xl:w-[212px]' />
         </span>
       </Text>
     </>
