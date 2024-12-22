@@ -15,7 +15,12 @@ export const FooterCols = () => {
           </Text>
           <View vertical className='gap-3'>
             {rows.map((row, index) => (
-              <Link key={index} className='text-sm' target='_blank' to={row.href}>
+              <Link
+                key={index}
+                className='text-sm transition-opacity hover:opacity-60'
+                target='_blank'
+                to={row.href}
+              >
                 {row.title}
               </Link>
             ))}
