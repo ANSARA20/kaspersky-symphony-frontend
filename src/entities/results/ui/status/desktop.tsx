@@ -9,6 +9,7 @@ import { View } from '@/shared/ui/view';
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import cup from '@/shared/assets/images/cup.png';
+import { LINKS } from '@/shared/config/links';
 
 export const ResultsStatusDesktop = () => {
   const { correctAnswersCount } = useQuiz();
@@ -19,6 +20,8 @@ export const ResultsStatusDesktop = () => {
   const resultsWrapperClassnames = clsx(
     'max-w-[647px] gap-12 rounded-3xl bg-secondary-100/80 p-4 lg:p-12',
   );
+
+  console.log(status);
 
   return (
     <MView {...ResultsWrapperTransition}>
@@ -38,6 +41,15 @@ export const ResultsStatusDesktop = () => {
         </Text>
         <Text className='text-center text-2xl' weight={3}>
           {description}
+          {!status && (
+            <>
+              Так что будь осторожнее и забирай свои{' '}
+              <a href={LINKS.TG_BOT} rel='noreferrer' target='_blank'>
+                стикеры.
+              </a>{' '}
+              Ну а тест ты всегда можешь перепройти!
+            </>
+          )}
         </Text>
       </View>
     </MView>

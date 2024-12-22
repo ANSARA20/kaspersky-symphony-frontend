@@ -14,8 +14,8 @@ interface QuizStore {
 }
 
 export const useQuiz = create<QuizStore>()((set) => ({
-  currentQuestionNumber: 1,
-  correctAnswersCount: 0,
+  currentQuestionNumber: 7,
+  correctAnswersCount: 3,
   currentQuestionId: undefined,
   isQuizEnded: false,
   answeredQuestionsIds: [],
