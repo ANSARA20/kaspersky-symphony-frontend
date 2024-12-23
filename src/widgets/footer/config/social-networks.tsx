@@ -12,7 +12,7 @@ interface IFooterSocialNetworks {
 
 export const FooterSocialNetworks: IFooterSocialNetworks[] = [
   {
-    icon: <TG />,
+    icon: <TG size={24} />,
     href: 'https://t.me/kasperskylab_ru',
   },
   {
