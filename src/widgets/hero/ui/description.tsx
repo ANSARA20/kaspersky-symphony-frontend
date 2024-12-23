@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 import puppy from '@/shared/assets/images/puppies/puppy_6.png';
 import { CurvedLine } from '@/shared/assets/icons/curved-line';
+import { LINKS } from '@/shared/config/links';
 
 export const HeroDescription = () => {
   return (
@@ -13,7 +16,11 @@ export const HeroDescription = () => {
         weight={6}
       >
         Испытай себя в тесте от Kaspersky и линейки решений для защиты бизнеса{' '}
-        <span className='text-gradient-base'>Kaspersky Symphony!</span>
+        <Link target='_blank' to={LINKS.PRODUCT}>
+          <span className='text-gradient-base transition-opacity hover:opacity-80'>
+            Kaspersky Symphony!
+          </span>
+        </Link>
       </Text>
       <View className='px-4' width='fit'>
         <Text className='max-w-[420px] text-center text-sm md:max-w-full xl:text-xl' weight={3}>

@@ -9,6 +9,7 @@ import { Picture } from '@/shared/ui/picture';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
 import cup from '@/shared/assets/images/cup.png';
+import { LINKS } from '@/shared/config/links';
 
 export const ResultsStatusMobile = () => {
   const { correctAnswersCount } = useQuiz();
@@ -37,6 +38,20 @@ export const ResultsStatusMobile = () => {
 
         <Text className='text-center text-lg' weight={3}>
           {description}
+          {!status && (
+            <span>
+              Так что будь осторожнее и забирай свои{' '}
+              <a
+                className='text-gradient-base transition-opacity hover:opacity-60'
+                href={LINKS.TG_BOT}
+                rel='noreferrer'
+                target='_blank'
+              >
+                стикеры.
+              </a>{' '}
+              Ну а тест ты всегда можешь перепройти!
+            </span>
+          )}
         </Text>
       </View>
     </MView>

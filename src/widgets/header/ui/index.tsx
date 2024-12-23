@@ -1,9 +1,11 @@
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 
 import Logo from '@/shared/assets/icons/logo';
 import { RulesIcon } from '@/shared/assets/icons/rules-icon';
 import { Text } from '@/shared/ui/text';
 import { View } from '@/shared/ui/view';
+import { LINKS } from '@/shared/config/links';
 
 export const Header = () => {
   const isNotMobile = useMediaQuery({ query: '(min-width: 560px)' });
@@ -15,9 +17,11 @@ export const Header = () => {
       items='center'
       justify={isNotMobile ? 'between' : 'center'}
     >
-      <Logo />
+      <Link className='transition-opacity hover:opacity-60' target='_blank' to={LINKS.PRODUCT}>
+        <Logo />
+      </Link>
       {isNotMobile ? (
-        <View centered as='a' href='/' width='fit'>
+        <View centered as='a' className='transition-opacity hover:opacity-60' href='/' width='fit'>
           <RulesIcon />
           <Text className='-ml-2 text-nowrap' size='sm'>
             Правила конкурса

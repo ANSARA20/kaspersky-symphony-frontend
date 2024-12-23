@@ -1,3 +1,4 @@
+// eslint-disable-next-line @conarti/feature-sliced/absolute-relative
 import { ISVGProps } from '@/shared/model/types/svg-props.type';
 
 export const TG = ({ size }: ISVGProps) => {

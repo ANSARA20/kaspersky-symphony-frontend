@@ -14,16 +14,16 @@ export const DogsOptions = [
   {
     image: Dog2,
     imageWidth: 484,
-    title: 'Кликер',
+    title: 'Киберстраж',
     textClassPosition: 'left-1/2 -ml-32 bottom-0 mb-32',
     blockClassPosition: 'left-1/4 -ml-16 -mt-12',
   },
   {
     image: Dog3,
     imageWidth: 413,
-    title: 'Киберстраж',
+    title: 'Кликер',
     textClassPosition: 'bottom-32 right-1/4 mr-5 -mb-2',
-    blockClassPosition: 'right-1/4 -mr-4 mt-16',
+    blockClassPosition: 'right-1/4 z-10 -mr-4 mt-16',
   },
   {
     image: Dog4,
