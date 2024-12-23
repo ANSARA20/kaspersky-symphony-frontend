@@ -103,7 +103,7 @@ export const Prizes: Record<EPrizeIds, IPrize> = {
   },
   [EPrizeIds.HOODIE]: {
     name: 'Худи',
-    feature: 'Клевое',
+    feature: 'клевое',
     description: 'Как доспехи, только мягче',
     type: ESymphonyLevels.XDR,
     image: Hoodie,

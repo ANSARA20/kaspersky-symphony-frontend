@@ -12,7 +12,7 @@ export const TGButton = () => {
 
   return (
     <Link to={TGLink}>
-      <button className='fixed bottom-[50px] right-[50px] z-10 md:bottom-[80px] md:right-[80px]'>
+      <button className='fixed bottom-[50px] right-[50px] z-10 transition-transform hover:scale-105 md:bottom-[80px] md:right-[80px]'>
         <div className={clsx(positionStyle, 'z-10 rounded-full bg-[#00A0B2] p-2 md:p-3')}>
           <TG size={36} />
         </div>
