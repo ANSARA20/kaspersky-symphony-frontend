@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { TGLink } from '../config/tg-link';
 
 import { TG } from '@/shared/assets/icons/tg';
+import { Text } from '@/shared/ui/text';
 
 export const TGButton = () => {
   const positionStyle = 'absolute left-0 -translate-x-1/2 -translate-y-1/2 rounded-full';
@@ -12,15 +13,23 @@ export const TGButton = () => {
 
   return (
     <Link to={TGLink}>
-      <button className='fixed bottom-[50px] right-[50px] z-10 md:bottom-[80px] md:right-[80px]'>
-        <div className={clsx(positionStyle, 'z-10 rounded-full bg-[#00A0B2] p-2 md:p-3')}>
-          <TG size={36} />
+      <button className='fixed bottom-[50px] right-[80px] z-10 md:bottom-[80px] md:right-[100px]'>
+        <div
+          className={clsx(
+            positionStyle,
+            'z-10 flex w-fit items-center rounded-full bg-[#00A0B2] px-3 py-2 md:px-4 md:py-3',
+          )}
+        >
+          <Text className='ml-2 mr-2 flex-shrink-0 text-start leading-4' weight={3}>
+            Перейти <br />в чат-бот
+          </Text>
+          <TG size={32} />
         </div>
         <div className={positionStyle}>
           <div
             className={clsx(
               circleStyle,
-              'h-[80px] w-[80px] animate-scale-opacity rounded-full md:h-[100px] md:w-[100px]',
+              'h-[60px] w-[150px] animate-scale-opacity rounded-full md:h-[70px] md:w-[180px]',
             )}
           />
         </div>
@@ -29,7 +38,7 @@ export const TGButton = () => {
           <div
             className={clsx(
               circleStyle,
-              'h-[100px] w-[100px] animate-scale-opacity rounded-full md:h-[120px] md:w-[120px]',
+              'h-[56px] w-[170px] animate-scale-opacity rounded-full md:h-[85px] md:w-[200px]',
             )}
           />
         </div>
