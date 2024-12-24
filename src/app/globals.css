@@ -31,6 +31,10 @@
   }
 }
 
+svg {
+  flex-shrink: 0;
+}
+
 html {
   -webkit-overflow-scrolling: touch;
 }

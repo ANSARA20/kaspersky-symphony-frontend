@@ -21,7 +21,13 @@ export const HeroDogDesktop = ({
   return (
     <View className={cn('absolute select-none', blockClassPosition)} width='fit'>
       <Picture alt={title} draggable={false} src={image} width={imageWidth} />
-      <Text className={cn('absolute select-none', textClassPosition)} weight={5}>
+      <Text
+        className={cn(
+          'absolute max-w-[100px] select-none text-center text-[18px]',
+          textClassPosition,
+        )}
+        weight={5}
+      >
         {title}
       </Text>
     </View>
