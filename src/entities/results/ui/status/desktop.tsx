@@ -18,19 +18,17 @@ export const ResultsStatusDesktop = () => {
   const { title, description, img } = getStatusInfo(status);
 
   const resultsWrapperClassnames = clsx(
-    'max-w-[647px] gap-12 rounded-3xl bg-secondary-100/80 p-4 lg:p-12',
+    'h-min max-w-[647px] gap-12 rounded-3xl bg-secondary-100/80 p-4 lg:p-12',
   );
 
-  console.log(status);
-
   return (
-    <MView {...ResultsWrapperTransition}>
-      <View centered className='w-full animate-float-up lg:w-[600px]'>
+    <MView {...ResultsWrapperTransition} className='-mb-8'>
+      <View centered className='-mt-16 w-full animate-float-up lg:w-[600px]'>
         <Picture alt='Ваш тотемный пёсель' src={img} />
       </View>
       <View vertical className={resultsWrapperClassnames} items='center'>
         <Text
-          className='text-gradient-base w-fit text-center text-2xl leading-[1] lg:text-[90px]'
+          className='text-gradient-base w-fit text-center text-2xl leading-[1] lg:text-[70px]'
           heading={2}
         >
           {title}
@@ -44,7 +42,12 @@ export const ResultsStatusDesktop = () => {
           {!status && (
             <>
               Так что будь осторожнее и забирай свои{' '}
-              <a href={LINKS.TG_BOT} rel='noreferrer' target='_blank'>
+              <a
+                className='text-gradient-base transition-opacity hover:opacity-60'
+                href={LINKS.TG_BOT}
+                rel='noreferrer'
+                target='_blank'
+              >
                 стикеры.
               </a>{' '}
               Ну а тест ты всегда можешь перепройти!

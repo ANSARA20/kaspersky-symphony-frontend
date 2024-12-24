@@ -14,7 +14,7 @@ export const TGButton = () => {
 
   return (
     <Link to={TGLink}>
-      <button className='fixed bottom-[50px] right-[120px] z-10 md:bottom-[80px] md:right-[150px]'>
+      <button className='fixed bottom-[50px] right-[120px] z-10 transition-transform hover:scale-105 active:scale-95 md:bottom-[80px] md:right-[150px]'>
         <div
           className={clsx(
             positionStyle,
