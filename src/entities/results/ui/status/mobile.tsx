@@ -33,7 +33,7 @@ export const ResultsStatusMobile = () => {
         </Text>
 
         <View centered className='w-full max-w-96 animate-float-up'>
-          <Picture alt='Ваш тотемный пёсель' src={img} />
+          <Picture alt='Ваш тотемный песель' src={img} />
         </View>
 
         <Text className='text-center text-lg' weight={3}>
