@@ -41,16 +41,18 @@ export const Footer = () => {
               </button>
               <Link
                 className='flex items-center gap-2 transition-opacity hover:opacity-60'
+                rel='noreferrer'
                 target='_blank'
-                to=''
+                to='/rules.pdf'
               >
                 <RulesIcon />
                 Правила конкурса
               </Link>
               <Link
                 className='flex items-center gap-2 transition-opacity hover:opacity-60'
+                rel='noreferrer'
                 target='_blank'
-                to=''
+                to='/info.pdf'
               >
                 <FileCheck />
                 Юридическая информация

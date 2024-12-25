@@ -24,7 +24,7 @@ export const ResultsStatusDesktop = () => {
   return (
     <MView {...ResultsWrapperTransition} className='-mb-8'>
       <View centered className='-mt-16 w-full animate-float-up lg:w-[600px]'>
-        <Picture alt='Ваш тотемный пёсель' src={img} />
+        <Picture alt='Ваш тотемный песель' src={img} />
       </View>
       <View vertical className={resultsWrapperClassnames} items='center'>
         <Text
