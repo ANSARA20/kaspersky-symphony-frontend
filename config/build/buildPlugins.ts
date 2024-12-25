@@ -6,13 +6,11 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { BuildOptions } from './types/build.types';
 
 export const buildPlugins = (options: BuildOptions): Configuration['plugins'] => {
   const { mode, paths } = options;
-
-
 
   const isDev = mode === 'development';
   const isProd = mode === 'production';
@@ -29,7 +27,15 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env)
-    })
+    }),
+     new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          globOptions: { ignore: ['**/index.html', '**/favicon.ico'] },
+        },
+      ],
+    }),
   ];
 
   if (isDev) {

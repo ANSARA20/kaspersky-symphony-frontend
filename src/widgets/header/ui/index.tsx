@@ -21,7 +21,15 @@ export const Header = () => {
         <Logo />
       </Link>
       {isNotMobile ? (
-        <View centered as='a' className='transition-opacity hover:opacity-60' href='/' width='fit'>
+        <View
+          centered
+          as='a'
+          className='transition-opacity hover:opacity-60'
+          href='/rules.pdf'
+          rel='noreferrer'
+          target='_blank'
+          width='fit'
+        >
           <RulesIcon />
           <Text className='-ml-2 text-nowrap' size='sm'>
             Правила конкурса
