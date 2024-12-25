@@ -9,7 +9,7 @@ import BotDog from '@/shared/assets/images/dogs/bot_dog.png';
 
 export const TGButton = () => {
   const positionStyle = 'absolute left-0 -translate-x-1/2 -translate-y-1/2 rounded-full';
-  const circleBorderStyle = 'border-[1px] border-primary';
+  const circleBorderStyle = 'border-[2px] border-primary';
   const circleStyle = clsx(circleBorderStyle, 'z-0 animate-scale-opacity');
 
   return (
@@ -34,7 +34,7 @@ export const TGButton = () => {
               opacity={5}
               weight={4}
             >
-              Создай свой стикер пак
+              Создай свой стикерпак
             </Text>
           </View>
         </div>

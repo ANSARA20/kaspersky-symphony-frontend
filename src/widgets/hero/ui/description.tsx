@@ -15,7 +15,7 @@ export const HeroDescription = () => {
         className='mt-10 max-w-[1080px] text-center text-[20px] leading-7 md:text-[32px] md:leading-10 lg:leading-10 xl:text-[40px] xl:leading-10'
         weight={6}
       >
-        Испытай себя в тесте от Kaspersky и линейки решений для защиты бизнеса{' '}
+        Испытай себя в тесте от команды Kaspersky и линейки решений для защиты бизнеса{' '}
         <Link target='_blank' to={LINKS.PRODUCT}>
           <span className='text-gradient-base transition-opacity hover:opacity-80'>
             Kaspersky Symphony!
